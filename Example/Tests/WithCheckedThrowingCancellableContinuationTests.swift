@@ -1,5 +1,4 @@
 import XCTest
-import protocol Combine.Cancellable
 @testable import TinkoffConcurrency
 
 final class WithCheckedThrowingCancellableContinuationTests: XCTestCase {

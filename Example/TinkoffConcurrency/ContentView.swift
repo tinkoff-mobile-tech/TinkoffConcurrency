@@ -23,8 +23,8 @@ struct ContentView: View {
             }
             .disabled(model.isRunning)
 
-            WideButton(title: "Run uncancellable task") {
-                model.runUncancellableTask()
+            WideButton(title: "Run non-cancellable task") {
+                model.runNonCancellableTask()
             }
             .disabled(model.isRunning)
 

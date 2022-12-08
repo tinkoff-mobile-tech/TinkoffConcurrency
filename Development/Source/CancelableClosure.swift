@@ -1,5 +1,5 @@
 import Foundation
-import protocol Combine.Cancellable
+@_exported import protocol Combine.Cancellable
 
 /// Отменяемая операция модуля "Приведи Друга".
 public final class CancellableClosure: Cancellable {

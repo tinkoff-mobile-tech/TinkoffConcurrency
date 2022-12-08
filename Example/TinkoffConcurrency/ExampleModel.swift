@@ -78,9 +78,9 @@ class ExampleModel: ObservableObject {
         }
     }
 
-    func runUncancellableTask() {
+    func runNonCancellableTask() {
         runThrowingClosure {
-            try await self.exampleUncancellableTask(duration: 5)
+            try await self.exampleNonCancellableTask(duration: 5)
         }
     }
 
@@ -125,7 +125,7 @@ class ExampleModel: ObservableObject {
 
     /// Пример оборачивания задачи, не поддерживающей отмену
     private var storedCancellable: Cancellable?
-    func exampleUncancellableTask(duration: Double) async throws -> String {
+    func exampleNonCancellableTask(duration: Double) async throws -> String {
         try await withCheckedThrowingCancellableContinuation { completion in
             storedCancellable = exampleTask(duration: duration, completion: completion)
 
