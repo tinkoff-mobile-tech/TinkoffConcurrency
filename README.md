@@ -27,15 +27,6 @@ func download(from url: URL) async throws -> Data {
 }
 ```
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first. Example app is a small demo that
-illustrates behavior of `withCheckedThrowingCancellableContinuation` for both cancellable and non-cancellable tasks, and compares that
-to vanilla `withCheckedThrowingContinuation` behavior.
-
-Example application needs iOS 15.0 to run, as it uses new SwiftUI features. It does NOT imply any restrictions of using TinkoffConcurrency
-library on older iOS versions.
-
 ## Requirements
 
 TinkoffConcurrency requires Swift 5.5 and higher, with support of Swift Concurrency. This way, all Xcode versions starting from 13.0 would work.
@@ -49,6 +40,15 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'TinkoffConcurrency'
 ```
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first. Example app is a small demo that
+illustrates behavior of `withCheckedThrowingCancellableContinuation` for both cancellable and non-cancellable tasks, and compares that
+to vanilla `withCheckedThrowingContinuation` behavior.
+
+Example application needs iOS 15.0 to run, as it uses new SwiftUI features. It does NOT imply any restrictions of using TinkoffConcurrency
+library on older iOS versions.
 
 ## Authors
 
