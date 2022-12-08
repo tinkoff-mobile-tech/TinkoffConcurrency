@@ -1,0 +1,16 @@
+PODS:
+  - TinkoffConcurrency (1.0.0)
+
+DEPENDENCIES:
+  - TinkoffConcurrency (from `../`)
+
+EXTERNAL SOURCES:
+  TinkoffConcurrency:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TinkoffConcurrency: 42494e2e14296f3dd81b3cf6cb61188b9f071a8c
+
+PODFILE CHECKSUM: 2b055ab41c401edc8132c821b3e3c65b1d61afd9
+
+COCOAPODS: 1.11.3
