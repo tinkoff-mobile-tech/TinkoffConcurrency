@@ -17,6 +17,7 @@ xcuserdata/
 DerivedData
 *.hmap
 *.ipa
+.swiftpm
 
 # Bundler
 .bundle
