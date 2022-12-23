@@ -3,9 +3,5 @@ use_frameworks!
 platform :ios, '15.0'
 
 target 'TinkoffConcurrency_Example' do
-  pod 'TinkoffConcurrency', :path => '../'
-
-  target 'TinkoffConcurrency_Tests' do
-    inherit! :search_paths
-  end
+  pod 'TinkoffConcurrency', path: '../', testspecs: ['Tests']
 end

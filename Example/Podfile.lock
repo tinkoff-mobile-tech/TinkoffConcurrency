@@ -1,16 +1,18 @@
 PODS:
   - TinkoffConcurrency (1.0.0)
+  - TinkoffConcurrency/Tests (1.0.0)
 
 DEPENDENCIES:
   - TinkoffConcurrency (from `../`)
+  - TinkoffConcurrency/Tests (from `../`)
 
 EXTERNAL SOURCES:
   TinkoffConcurrency:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TinkoffConcurrency: 42494e2e14296f3dd81b3cf6cb61188b9f071a8c
+  TinkoffConcurrency: fe0fb91b9d287e87c7071fd6fb9cf8522307aad9
 
-PODFILE CHECKSUM: 2b055ab41c401edc8132c821b3e3c65b1d61afd9
+PODFILE CHECKSUM: 94cd4e6bdae2369a010ce5966c9a239197ff8c7e
 
 COCOAPODS: 1.11.3
