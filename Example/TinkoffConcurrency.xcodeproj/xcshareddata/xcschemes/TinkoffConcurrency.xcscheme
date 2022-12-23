@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "123267F32942156000E638F6"
-               BuildableName = "TinkoffConcurrency_Tests.xctest"
-               BlueprintName = "TinkoffConcurrency_Tests"
-               ReferencedContainer = "container:TinkoffConcurrency.xcodeproj">
+               BlueprintIdentifier = "5D4696F3DA80711EB09F24699062735B"
+               BuildableName = "TinkoffConcurrency-Unit-Tests.xctest"
+               BlueprintName = "TinkoffConcurrency-Unit-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

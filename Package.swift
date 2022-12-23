@@ -24,7 +24,7 @@ let package = Package(
     .testTarget(
       name: "TinkoffConcurrency_Tests",
       dependencies: ["TinkoffConcurrency"],
-      path: "Example/Tests"
+      path: "Tests"
     ),
   ]
 )
