@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TinkoffConcurrency: f0852adff5ba60e2b2f4d6fa85b2c113eefea2ba
+  TinkoffConcurrency: fe0fb91b9d287e87c7071fd6fb9cf8522307aad9
 
 PODFILE CHECKSUM: 94cd4e6bdae2369a010ce5966c9a239197ff8c7e
 
