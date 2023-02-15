@@ -1,18 +1,19 @@
 import XCTest
+
 @testable import TinkoffConcurrency
 
 final class CancellablesStorageTests: XCTestCase {
 
     // MARK: - Dependencies
 
-    private var cancellablesStorage: CancellablesStorage!
+    private var cancellablesStorage: TCCancellablesStorage!
 
     // MARK: - XCTestCase
 
     override func setUp() {
         super.setUp()
 
-        cancellablesStorage = CancellablesStorage()
+        cancellablesStorage = TCCancellablesStorage()
     }
 
     override func tearDown() {
@@ -25,12 +26,12 @@ final class CancellablesStorageTests: XCTestCase {
 
     func test_cancellablesStorage_state() {
         // then
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.active)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.active)
     }
 
     func test_cancellablesStorage_add() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         // when
         let result = cancellablesStorage.add(cancellable)
@@ -41,7 +42,7 @@ final class CancellablesStorageTests: XCTestCase {
 
     func test_cancellablesStorage_add_whenStateIsCancelled() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         cancellablesStorage.cancel()
 
@@ -51,14 +52,14 @@ final class CancellablesStorageTests: XCTestCase {
         // then
         XCTAssertFalse(result)
 
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.cancelled)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.cancelled)
 
         XCTAssertTrue(cancellable.invokedCancel)
     }
 
     func test_cancellablesStorage_add_whenStateIsDeactivated() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         _ = cancellablesStorage.deactivate()
 
@@ -68,14 +69,14 @@ final class CancellablesStorageTests: XCTestCase {
         // then
         XCTAssertFalse(result)
 
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.deactivated)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.deactivated)
 
         XCTAssertFalse(cancellable.invokedCancel)
     }
 
     func test_cancellablesStorage_cancel() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         cancellablesStorage.add(cancellable)
 
@@ -83,14 +84,14 @@ final class CancellablesStorageTests: XCTestCase {
         cancellablesStorage.cancel()
 
         // then
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.cancelled)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.cancelled)
 
         XCTAssertEqual(cancellable.invokedCancelCount, 1)
     }
 
     func test_cancellablesStorage_cancel_whenStateIsCancelled() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         cancellablesStorage.add(cancellable)
 
@@ -100,14 +101,14 @@ final class CancellablesStorageTests: XCTestCase {
         cancellablesStorage.cancel()
 
         // then
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.cancelled)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.cancelled)
 
         XCTAssertEqual(cancellable.invokedCancelCount, 1)
     }
 
     func test_cancellablesStorage_cancel_whenStateIsDeactivated() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         cancellablesStorage.add(cancellable)
 
@@ -117,14 +118,14 @@ final class CancellablesStorageTests: XCTestCase {
         cancellablesStorage.cancel()
 
         // then
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.deactivated)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.deactivated)
 
         XCTAssertFalse(cancellable.invokedCancel)
     }
 
     func test_cancellablesStorage_deactivate() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         cancellablesStorage.add(cancellable)
 
@@ -134,14 +135,14 @@ final class CancellablesStorageTests: XCTestCase {
         // then
         XCTAssertTrue(result)
 
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.deactivated)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.deactivated)
 
         XCTAssertFalse(cancellable.invokedCancel)
     }
 
     func test_cancellablesStorage_deactivate_whenStateIsCancelled() {
         // given
-        let cancellable = CancellableMock()
+        let cancellable = TCCancellableMock()
 
         cancellablesStorage.add(cancellable)
 
@@ -153,7 +154,7 @@ final class CancellablesStorageTests: XCTestCase {
         // then
         XCTAssertFalse(result)
 
-        XCTAssertEqual(cancellablesStorage.state, CancellablesStorage.State.cancelled)
+        XCTAssertEqual(cancellablesStorage.state, TCCancellablesStorage.State.cancelled)
 
         XCTAssertEqual(cancellable.invokedCancelCount, 1)
     }

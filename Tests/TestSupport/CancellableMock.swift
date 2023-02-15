@@ -1,11 +1,6 @@
-import XCTest
-import protocol Combine.Cancellable
+import TinkoffConcurrency
 
-// MARK: - BFMCancellable
-
-final class CancellableMock: Cancellable {
-
-    // MARK: - cancel
+final class TCCancellableMock: TCCancellable {
 
     var invokedCancelCount = 0
     var invokedCancel: Bool {

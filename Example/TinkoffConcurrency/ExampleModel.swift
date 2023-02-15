@@ -99,10 +99,10 @@ class ExampleModel: ObservableObject {
     // MARK: - Example Task
 
     /// Пример задачи, имитирующей бурную деятельность в течение заданного времени, а затем вызывающей замыкание
-    func exampleTask(duration: Double, completion: @escaping (Result<String, Error>) -> Void) -> Cancellable {
+    func exampleTask(duration: Double, completion: @escaping (Result<String, Error>) -> Void) -> TCCancellable {
         let startDate = Date()
 
-        return Timer.publish(every: 0.1, on: .main, in: .default)
+        Timer.publish(every: 0.1, on: .main, in: .default)
             .autoconnect()
             .map { _ in -startDate.timeIntervalSinceNow / duration }
             .prefix(while: { $0 <= 1 })
@@ -112,6 +112,8 @@ class ExampleModel: ObservableObject {
             } receiveValue: { [weak self] value in
                 self?.progress = value
             }
+        
+        return TCCancellableClosure { }
     }
 
     // MARK: - Wrapping Variants
@@ -124,7 +126,8 @@ class ExampleModel: ObservableObject {
     }
 
     /// Пример оборачивания задачи, не поддерживающей отмену
-    private var storedCancellable: Cancellable?
+    private var storedCancellable: TCCancellable?
+    
     func exampleNonCancellableTask(duration: Double) async throws -> String {
         try await withCheckedThrowingCancellableContinuation { completion in
             storedCancellable = exampleTask(duration: duration, completion: completion)
