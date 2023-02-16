@@ -1,32 +1,28 @@
-import protocol Combine.Cancellable
-
-/// Suspends the current task, then calls the given closure with a checked throwing continuation for the current task. If given closure returns a cancellable,
-/// it will be called if task is cancelled. If calling task is cancelled, the continuation is resumed throwing ``CancellationError`` exception.
+/// Suspends the current task, then calls the given closure with a completion.
+///
+/// This function uses a checked throwing continuation for the current task and ensures that it is resumed only once.
+/// It also supports cooperative task cancelation, so if the given closure returns a cancellable operation, it will be cancelled
+/// once the current task is cancelled.
 ///
 /// - Parameters:
-///   - body: a closure that will be called and given `completion` closure as a parameter. When task is done, a `completion` must be called with either
-///           execution result or failure reason
-/// - Throws: an error if it is received from `body`
-/// - Returns: a result that `body` passed to `completion` upon ready.
-public func withCheckedThrowingCancellableContinuation<T>(function: String = #function, _ body: (@escaping (Result<T, Error>) -> Void) -> Cancellable?) async throws -> T {
-    // We store all cancellables in a storage that will guarantee that continuation will be resumed exactly once
-    let cancellablesStorage = CancellablesStorage()
+///   - function: A string identifying the declaration that is the notional source for the continuation, used to
+///               identify the continuation in runtime diagnostics related to misuse of this continuation.
+///   - body: The closure that will be called and given completion.
+/// - Throws: An error passed to a completion by the given closure, or ``CancellationError`` if
+///           the current task was cancelled before the given closure called a completion.
+/// - Returns: A result passed to a completion by the given closure.
+public func withCheckedThrowingCancellableContinuation<T>(
+    function: String = #function,
+    _ body: (@escaping (Result<T, Error>) -> Void) -> TCCancellable?) async throws -> T {
+    let cancellablesStorage = TCCancellablesStorage()
 
     return try await withTaskCancellationHandler {
-        // If task has been already cancelled, bailing out early.
-        if cancellablesStorage.state == CancellablesStorage.State.cancelled {
+        if cancellablesStorage.state == TCCancellablesStorage.State.cancelled {
             throw CancellationError()
         }
 
         return try await withCheckedThrowingContinuation(function: function) { continuation in
-            // Call body and add a cancellable to the storage. If task cancellation handler is called,
-            // this cancellable will be called and all other interactions with the storage will be ignored
-
             let cancellable = body { result in
-                // Here, asynchronous task is finished, but we still have a race possibility if cancel is called
-                // from another thread. To get over that, we deactivate a storage, so it will ignore all calls to
-                // `cancel` or `deactivate`, and `deactivate` itself is atomic. If deactivation succeds, we can resume
-                // continuation with execution result.
                 guard cancellablesStorage.deactivate() else {
                     return
                 }
@@ -34,15 +30,13 @@ public func withCheckedThrowingCancellableContinuation<T>(function: String = #fu
                 continuation.resume(with: result)
             }
 
-            cancellablesStorage.add(CancellableClosure {
+            cancellablesStorage.add(TCCancellableClosure {
                 cancellable?.cancel()
+
                 continuation.resume(throwing: CancellationError())
             })
         }
     } onCancel: {
-        // If task is cancelled, this handler is called synchronously from the thread that initiated cancellation.
-        // We just cancel our storage, and, since this operation is atomic, it either cancels current operation
-        // or does nothing if storage was deactivated from another thread.
         cancellablesStorage.cancel()
     }
 }

@@ -1,13 +1,14 @@
 import XCTest
+
 @testable import TinkoffConcurrency
 
 final class CancellableTests: XCTestCase {
 
     // MARK: - Tests
 
-    func test_сancellableClosure_isCancelled() {
+    func test_cancellableClosure_isCancelled() {
         // when
-        let cancellable = CancellableClosure { }
+        let cancellable = TCCancellableClosure { }
 
         // then
         XCTAssertFalse(cancellable.isCancelled)
@@ -21,7 +22,7 @@ final class CancellableTests: XCTestCase {
             isCancellationClosureCalled = true
         }
 
-        let cancellable = CancellableClosure(cancellationClosure: cancellationClosure)
+        let cancellable = TCCancellableClosure(cancellationClosure: cancellationClosure)
 
         // when
         cancellable.cancel()
