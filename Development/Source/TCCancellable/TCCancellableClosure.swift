@@ -8,15 +8,15 @@ public final class TCCancellableClosure: TCCancellable {
     private let cancellationClosure: () -> Void
 
     private var _isCancelled = false
-    
+
     // MARK: - Public Properties
-    
+
     /// A value that indicates whether the cancellation was performed.
     ///
     /// After the value of this property becomes `true`, it remains `true` indefinitely.
     public var isCancelled: Bool {
         defer { lock.unlock() }
-        
+
         lock.lock()
 
         return _isCancelled
@@ -32,7 +32,7 @@ public final class TCCancellableClosure: TCCancellable {
     }
 
     // MARK: - TCCancellable
-    
+
     /// Executes the captured closure.
     ///
     /// Sets the value of the ``TCCancellableClosure/isCancelled`` property to `true`.
