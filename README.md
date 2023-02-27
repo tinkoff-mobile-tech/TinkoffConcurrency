@@ -1,10 +1,5 @@
 # TinkoffConcurrency
 
-[![CI Status](https://img.shields.io/travis/tinkoff-mobile-tech/TinkoffConcurrency.svg?style=flat)](https://travis-ci.org/tinkoff-mobile-tech/TinkoffConcurrency)
-[![Version](https://img.shields.io/cocoapods/v/TinkoffConcurrency.svg?style=flat)](https://cocoapods.org/pods/TinkoffConcurrency)
-[![License](https://img.shields.io/cocoapods/l/TinkoffConcurrency.svg?style=flat)](https://cocoapods.org/pods/TinkoffConcurrency)
-[![Platform](https://img.shields.io/cocoapods/p/TinkoffConcurrency.svg?style=flat)](https://cocoapods.org/pods/TinkoffConcurrency)
-
 ## TL;DR
 
 ```swift
