@@ -3,9 +3,15 @@ import Combine
 
 class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
 
+
+    // MARK: - Private Properties
+
     private let lock = NSLock()
+
     private(set) var subscribers: [AnySubscriber<Output, Failure>] = []
     private(set) var subscriptions: [SubscriptionMock] = []
+
+    // MARK: - Properties
 
     var willSubscribe: ((AnySubscriber<Output, Failure>, SubscriptionMock) -> Void)?
 
@@ -14,7 +20,10 @@ class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
     var onDeinit: (() -> Void)?
 
     var invokedCancel: Bool = false
+
     var onCancel: (() -> Void)?
+
+    // MARK: - Initializers
 
     required init() {
     }
@@ -23,10 +32,13 @@ class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
         onDeinit?()
     }
 
+    // MARK: - Methods
+
     func receive<Downstream: Subscriber>(subscriber: Downstream)
         where Failure == Downstream.Failure, Output == Downstream.Input
     {
         let anySubscriber = AnySubscriber(subscriber)
+
         lock.access {
             self.subscribers.append(anySubscriber)
         }
@@ -38,6 +50,7 @@ class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
         lock.access {
             self.subscriptions.append(subscription)
         }
+
         subscriber.receive(subscription: subscription)
 
         didSubscribe?(anySubscriber, subscription)
@@ -45,6 +58,7 @@ class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
 
     func cancel() {
         invokedCancel = true
+
         onCancel?()
     }
 }
