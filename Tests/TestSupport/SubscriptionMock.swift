@@ -35,7 +35,9 @@ final class SubscriptionMock: Subscription, CustomStringConvertible {
     }
 
     var onRequest: ((Subscribers.Demand) -> Void)?
+
     var onCancel: (() -> Void)?
+
     var onDeinit: (() -> Void)?
 
     var description: String { "SubscriptionMock" }
@@ -54,17 +56,21 @@ final class SubscriptionMock: Subscription, CustomStringConvertible {
         onDeinit?()
     }
 
-    // MARK: - Methods
+    // MARK: - Subscription
 
     func request(_ demand: Subscribers.Demand) {
         lock.access { _history.append(.requested(demand)) }
+
         onRequest?(demand)
     }
+
+    // MARK: - Cancellable
 
     func cancel() {
         lock.access {
             _history.append(.cancelled)
         }
+
         onCancel?()
     }
 }

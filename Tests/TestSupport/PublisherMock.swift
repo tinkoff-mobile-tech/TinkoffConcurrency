@@ -3,7 +3,6 @@ import Combine
 
 class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
 
-
     // MARK: - Private Properties
 
     private let lock = NSLock()
@@ -32,7 +31,7 @@ class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
         onDeinit?()
     }
 
-    // MARK: - Methods
+    // MARK: - Publisher
 
     func receive<Downstream: Subscriber>(subscriber: Downstream)
         where Failure == Downstream.Failure, Output == Downstream.Input
@@ -55,6 +54,8 @@ class PublisherMock<Output, Failure: Error>: Publisher, Cancellable {
 
         didSubscribe?(anySubscriber, subscription)
     }
+
+    // MARK: - Cancellable
 
     func cancel() {
         invokedCancel = true
