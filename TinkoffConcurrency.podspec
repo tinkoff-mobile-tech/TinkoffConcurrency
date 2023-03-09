@@ -30,22 +30,15 @@ Pod::Spec.new do |s|
 
   s.subspec 'CancellableContinuation' do |spec|
     spec.source_files = 'Development/Source/CancellableContinuation/**/*.swift'
-
-    spec.test_spec 'CancellableContinuationTests' do |test_spec|
-      test_spec.source_files = "Tests/CancellableContinuation/**/*.swift"
-    end
   end
 
   s.subspec 'CombineBindings' do |spec|
-    spec.source_files = 'Development/Source/CombineBindings/**/*.swift'
+    spec.dependency 'TinkoffConcurrency/CancellableContinuation'
 
-    spec.test_spec 'CombineBindingsTests' do |test_spec|
-      test_spec.source_files = "Tests/CombineBindings/**/*.swift"
-    end
+    spec.source_files = 'Development/Source/CombineBindings/**/*.swift'
   end
 
   s.test_spec 'Tests' do |test_spec|
-    test_spec.dependency 'CombineSchedulers'
     test_spec.source_files = "Tests/**/*.swift"
   end
 end

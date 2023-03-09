@@ -1,6 +1,5 @@
 import XCTest
 import Combine
-import CombineSchedulers
 import TinkoffConcurrency
 
 final class TCAsyncThrowingPublisherTests: XCTestCase {
@@ -133,6 +132,8 @@ final class TCAsyncThrowingPublisherTests: XCTestCase {
         // then
 
         await XCTWaiter.waitAsync(for: [readerStarted], timeout: 1)
+
+        await Task.megaYield()
 
         task.cancel()
 
@@ -293,14 +294,14 @@ final class TCAsyncThrowingPublisherTests: XCTestCase {
 
         task.cancel()
 
-        scheduler.run()
+        await scheduler.run()
 
         await XCTExecuteCancels(try await task.value)
     }
 
     func test_tcAsyncThrowingPublisher_combineCompatibility() async throws {
         // given
-        guard #available(iOS 15.0, *) else {
+        guard #available(iOS 15, macOS 12, tvOS 15, *) else {
             return
         }
 
@@ -348,7 +349,7 @@ final class TCAsyncThrowingPublisherTests: XCTestCase {
         let taskTC1Result = try await taskTC1.value
         let taskTC2Result = try await taskTC2.value
         let taskCombine1Result = await taskCombine1.value
-        let _ = await taskCombine2.result
+        _ = await taskCombine2.result
 
         // then
         XCTAssertEqual(taskTC1Result, taskTC2Result)
@@ -399,9 +400,7 @@ final class TCAsyncThrowingPublisherTests: XCTestCase {
         testStarted.fulfill()
 
         Task {
-            await Task.megaYield()
-            
-            scheduler.run()
+            await scheduler.run()
         }
 
         _ = await task.result

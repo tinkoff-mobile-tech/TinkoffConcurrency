@@ -1,34 +1,24 @@
 PODS:
-  - CombineSchedulers (0.5.0):
-    - XCTestDynamicOverlay
   - TinkoffConcurrency (1.0.0):
     - TinkoffConcurrency/All (= 1.0.0)
   - TinkoffConcurrency/All (1.0.0):
     - TinkoffConcurrency/CancellableContinuation
     - TinkoffConcurrency/CombineBindings
   - TinkoffConcurrency/CancellableContinuation (1.0.0)
-  - TinkoffConcurrency/CombineBindings (1.0.0)
-  - TinkoffConcurrency/Tests (1.0.0):
-    - CombineSchedulers
-  - XCTestDynamicOverlay (0.1.1)
+  - TinkoffConcurrency/CombineBindings (1.0.0):
+    - TinkoffConcurrency/CancellableContinuation
+  - TinkoffConcurrency/Tests (1.0.0)
 
 DEPENDENCIES:
   - TinkoffConcurrency (from `../`)
   - TinkoffConcurrency/Tests (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - CombineSchedulers
-    - XCTestDynamicOverlay
 
 EXTERNAL SOURCES:
   TinkoffConcurrency:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CombineSchedulers: 1694dde9a87d00395c3f4c4bf0068de857f8d5ae
-  TinkoffConcurrency: 27b04f6a85e5fcfa5474021141120bd398f94d0b
-  XCTestDynamicOverlay: 469eee57cb97323ebedcc94c9b2b3115e7448e7a
+  TinkoffConcurrency: 052d3ba6c97f59d57a8c881c5148c0a93595e94c
 
 PODFILE CHECKSUM: 94cd4e6bdae2369a010ce5966c9a239197ff8c7e
 

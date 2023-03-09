@@ -53,3 +53,7 @@ Aleksandr Darovskikh, ext.adarovskikh@tinkoff.ru
 ## License
 
 TinkoffConcurrency is available under the Apache 2.0 license. See the LICENSE file for more info.
+
+## Attributions
+
+Thank you [Point-free](https://github.com/pointfreeco/combine-schedulers) for test Combine scheduler

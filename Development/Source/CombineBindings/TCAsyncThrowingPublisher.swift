@@ -298,6 +298,7 @@ fileprivate final class InnerSubscriber<P: Publisher>: Subscriber, @unchecked Se
 
     // MARK: - Private Methods
 
+    // swiftlint:disable:next cyclomatic_complexity
     private func process(event: Event) -> Action {
         defer { lock.unlock() }
         lock.lock()
