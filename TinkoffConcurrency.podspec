@@ -21,11 +21,31 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = '6.0'
   s.tvos.deployment_target = '13.0'
   s.swift_version = '5.5'
+  s.default_subspec = 'All'
 
-  s.source_files = 'Development/Source/**/*.swift'
+  s.subspec 'All' do |spec|
+    spec.dependency 'TinkoffConcurrency/CancellableContinuation'
+    spec.dependency 'TinkoffConcurrency/CombineBindings'
+  end
+
+  s.subspec 'CancellableContinuation' do |spec|
+    spec.source_files = 'Development/Source/CancellableContinuation/**/*.swift'
+
+    spec.test_spec 'CancellableContinuationTests' do |test_spec|
+      test_spec.source_files = "Tests/CancellableContinuation/**/*.swift"
+    end
+  end
+
+  s.subspec 'CombineBindings' do |spec|
+    spec.source_files = 'Development/Source/CombineBindings/**/*.swift'
+
+    spec.test_spec 'CombineBindingsTests' do |test_spec|
+      test_spec.source_files = "Tests/CombineBindings/**/*.swift"
+    end
+  end
 
   s.test_spec 'Tests' do |test_spec|
-    test_spec.requires_app_host = true
+    test_spec.dependency 'CombineSchedulers'
     test_spec.source_files = "Tests/**/*.swift"
   end
 end
