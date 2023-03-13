@@ -1,3 +1,5 @@
+import Foundation
+
 /// An object that captures a closure to execute upon cancellation.
 public final class TCCancellableClosure: TCCancellable {
 
