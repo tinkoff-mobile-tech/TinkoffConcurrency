@@ -142,9 +142,8 @@ public struct TCAsyncPublisher<P: Publisher>: AsyncSequence, @unchecked Sendable
     }
 }
 
-/// Разделённое состояние для итератора. Этот класс-прокладка необходим для того, чтобы отслеживать завершение использования
-/// асинхронной последовательности, и завершать соответствующую подписку. `innerSubscriber` будет захвачен подпиской, и не освободится, пока
-/// не будет завершена подписка.
+/// Iterator shared state. This is required to detect when async sequence is no longer used. In this case, `deinit` would be called and we can finish `innerSubscriber` .
+/// `innerSubscriber` itself would be captured by subscription, and would not be released until subscribtion is finished.
 fileprivate final class InnerClass<P: Publisher>: @unchecked Sendable {
 
     // MARK: - Private Properties
@@ -180,73 +179,74 @@ fileprivate final class InnerSubscriber<P: Publisher>: Subscriber, @unchecked Se
 
     // MARK: - Inner Types
 
-    /// Состояние подписчика.
+    /// Subscriber state.
     private enum State {
 
         // MARK: - Cases
 
-        /// самое начало
+        /// The very start
         case idle
 
-        /// Сжидаем подписку, уже имея запрос на значение (next у итератора уже вызвали, а подписки ещё нет)
+        /// Waiting for subscription, already having a request for value (iterator's `next` is already called, but subscription is still not there)
         case waitingForSubscription(having: CompletionClosure)
 
-        /// Ожидаем запроса со стороны Swift Concurrency, уже имея подписку.
+        /// Waiting for value request from Swift Concurrency, having subscription.
         case waitingForConsume(having: Subscription)
 
-        /// Ожидаем значение со стороны Combine, имея запрос со стороны Swift Concurrency.
+        /// Waiting for input from Combine, having request from Swift Concurrency.
         case waitingForInput(from: Subscription, to: CompletionClosure)
 
-        /// Подписка завершилась со стороны Combine, но нужно дождаться запроса со стороны Swift Concurrency,
-        /// чтобы завершить последовательность.
+        /// Subscription is finished from Combine's side, but we must wait for request from Swift Concurrency,
+        /// to gracefully shutdown everything.
         case finishing(with: Subscribers.Completion<Failure>)
 
-        /// Отменено со стороны Swift Concurrency, но может прийти зашедуленная подписка, которую надо будет отменить.
+        /// Cancelled from Swift Concurrency, but scheduled subscription can still come. In this case it must be cancelled at once.
         case canceled
 
-        /// Завершено со стороны Combine
+        /// Cancelled from Combine
         case completed
     }
 
-    /// Событие для подписчика.
+    /// Subscriber event.
     private enum Event {
 
         // MARK: - Cases
 
-        /// Запрос значения со стороны Swift Concurrency
+        /// Request for a value from Swift Concurrency, given a completion closure to call with a value or error
         case consume(CompletionClosure)
 
-        /// Отмена со стороны Swift Concurrency
+        /// Swift Concurrency Task cancelled
         case didReceiveCancel
 
-        /// Завершение со стороны Combine
+        /// Combine Subscription is completed
         case didReceiveCompletion(Subscribers.Completion<Failure>)
 
-        /// Получено значение со стороны Combine
+        /// Got a value from Combine
         case didReceiveInput(Input)
 
-        /// Получена подписка со стороны Combine
+        /// Got a subscription from Combine
         case didReceiveSubscription(Subscription)
     }
 
-    /// Описание действия.
+    /// Action description. Instead of doing stuff directly, we return descriptions which will be called when state lock is released.
+    /// That makes logic more readable.
     private enum Action {
 
         // MARK: - Cases
 
-        /// Необходимо отправить значение в замыкание завершения.
+        /// We have to send an input to given closure.
         case send(Input, to: CompletionClosure)
 
-        /// Необходимо запросить значение со стороны Combine.
+        /// Request a value from Combine.
         case request(Subscription)
 
-        /// Необходимо завершить последовательность Swift Concurrency (закончить, либо выбросить исключение).
+        /// We have to finish Async Sequence (either gracefully, or by throwing an error)
         case finish(CompletionClosure, with: Subscribers.Completion<Failure>)
 
-        /// Необходимо отменить подписку Combine.
+        /// We have to cancel Combine subscription.
         case cancel(Subscription)
 
-        /// Ничего не делать.
+        /// Do nothing.
         case none
     }
 
@@ -265,8 +265,8 @@ fileprivate final class InnerSubscriber<P: Publisher>: Subscriber, @unchecked Se
     // MARK: - Methods
 
     func next() async throws -> Input? {
-        // явно используем `withTaskCancellationHandler`, чтобы не терять события отмены задач,
-        // даже если consume не успела выполниться. Это необходимо, чтобы надёжно отменять подписку при отмене.
+        // Use `withTaskCancellationHandler`, explicitly, to send cancellation event even if consume didn't return.
+        // This is necessary to reliably cancel a Combine subscription when canceling task.
         try await withTaskCancellationHandler {
             try await withCheckedThrowingCancellableContinuation { completion in
                 handle(event: .consume(completion))
