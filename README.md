@@ -22,6 +22,17 @@ func download(from url: URL) async throws -> Data {
 }
 ```
 
+```swift
+let numbers: [Int] = [1, 2, 3, 4, 5]
+let filtered = numbers.publisher
+    .filter { $0 % 2 == 0 }
+
+// Available from iOS 13
+for await number in filtered.asyncValues {
+    print("\(number)", terminator: " ")
+}
+```
+
 ## Requirements
 
 TinkoffConcurrency requires Swift 5.5 and higher, with support of Swift Concurrency. This way, all Xcode versions starting from 13.0 would work.
