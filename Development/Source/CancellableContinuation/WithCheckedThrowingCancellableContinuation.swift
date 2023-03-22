@@ -8,7 +8,8 @@
 ///   - function: A string identifying the declaration that is the notional source for the continuation, used to
 ///               identify the continuation in runtime diagnostics related to misuse of this continuation.
 ///   - body: The closure that will be called and given completion.
-/// - Throws: An error passed to a completion by the given closure, or ``CancellationError`` if
+/// - Throws: An error passed to a completion by the given closure, or
+///           [CancellationError](https://developer.apple.com/documentation/swift/cancellationerror) if
 ///           the current task was cancelled before the given closure called a completion.
 /// - Returns: A result passed to a completion by the given closure.
 public func withCheckedThrowingCancellableContinuation<T>(

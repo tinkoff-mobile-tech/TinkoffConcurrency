@@ -81,7 +81,7 @@ public struct TCAsyncThrowingPublisher<P: Publisher>: AsyncSequence, @unchecked 
 /// which allows callers to receive values with the `for`-`await`-`in` syntax, rather than attaching a
 /// [Subscriber](https://developer.apple.com/documentation/combine/subscriber).
 ///
-///  It follows original  [AsyncThrowingPublisher](https://developer.apple.com/documentation/combine/asyncthrowingpublisher)
+///  It follows original  [AsyncPublisher](https://developer.apple.com/documentation/combine/asyncpublisher)
 ///  contract, but is accessible from earlier OS versions.
 ///  
 /// Use the ``asyncValues`` property of the [Publisher](https://developer.apple.com/documentation/combine/publisher)
@@ -499,7 +499,7 @@ extension Publisher where Self.Failure == Never {
     /// The example adapts a code snippet from the [filter(_:)](https://developer.apple.com/documentation/combine/publisher/filter(_:)) operator's documentation,
     /// which filters a sequence to only emit even integers. This example replaces the
     /// [Subscribers.Sink](https://developer.apple.com/documentation/combine/subscribers/sink)
-    /// subscriber with a `for`-`await`-`in` loop that iterates over the ``TCAsyncThrowingPublisher``
+    /// subscriber with a `for`-`await`-`in` loop that iterates over the ``TCAsyncPublisher``
     /// provided by the `asyncValues` property.
     ///
     ///     let numbers: [Int] = [1, 2, 3, 4, 5]
