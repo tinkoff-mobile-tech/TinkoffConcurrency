@@ -1,6 +1,6 @@
 # Combine bindings for legacy systems
 
-A bridge between Combine Publishers and Swift [AsyncSequence](https://developer.apple.com/documentation/swift/asyncsequence) 
+A bridge between Combine Publishers and Swift AsyncSequence 
 
 ## Overview
 

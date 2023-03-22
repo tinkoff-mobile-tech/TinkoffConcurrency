@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '13.0'
   s.swift_version = '5.5'
 
-  s.source_files = 'Development/Source/**/*.swift'
+  s.source_files = 'Development/Source/**/*.{swift,md,docc}'
 
   s.test_spec 'Tests' do |test_spec|
     test_spec.source_files = "Tests/**/*.swift"

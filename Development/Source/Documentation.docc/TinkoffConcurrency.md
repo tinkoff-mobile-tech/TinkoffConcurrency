@@ -12,7 +12,7 @@ Some of these issues are
 
 This library provides ``withCheckedThrowingCancellableContinuation(function:_:)`` method to wrap existing
 callback-based code as one would do using 
-[withcheckedthrowingcontinuation(function:_:)](https://developer.apple.com/documentation/swift/withcheckedthrowingcontinuation(function:_:)),
+ [withCheckedThrowingContinuation](https://developer.apple.com/documentation/swift/withcheckedthrowingcontinuation(function:_:)),
 and `asyncValues` extension method for Combine [Publisher](https://developer.apple.com/documentation/combine/publisher), which reflects
 Apple's [values](https://developer.apple.com/documentation/swift/result/publisher-swift.struct/values-7yerq) behavior, but is available
 on older systems.
