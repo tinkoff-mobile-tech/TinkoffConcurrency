@@ -3,6 +3,9 @@
 ## TL;DR
 
 ```swift
+// Make URLSessionDataTask conform to TCCancellable
+extension URLSessionDataTask: TCCancellable {}
+
 func download(from url: URL) async throws -> Data {
     await withCheckedThrowingCancellableContinuation{ completion in
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
