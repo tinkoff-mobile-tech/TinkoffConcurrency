@@ -4,7 +4,7 @@ import Combine
 /// A publisher that exposes its elements as an asynchronous sequence.
 ///
 /// `TCAsyncThrowingPublisher` conforms to [AsyncSequence](https://developer.apple.com/documentation/swift/asyncsequence),
-/// which allows callers to receive values with the `for`-`await`-`in` syntax, rather than attaching a ``Subscriber``.
+/// which allows callers to receive values with the `for`-`await`-`in` syntax, rather than attaching a [Subscriber](https://developer.apple.com/documentation/combine/subscriber).
 ///
 ///  It follows original  [AsyncThrowingPublisher](https://developer.apple.com/documentation/combine/asyncthrowingpublisher) contract, but is accessible from earlier OS versions.
 ///
@@ -74,10 +74,11 @@ public struct TCAsyncThrowingPublisher<P: Publisher>: AsyncSequence, @unchecked 
 
 /// A publisher that exposes its elements as an asynchronous sequence.
 ///
-/// `TCAsyncPublisher` conforms to <doc://com.apple.documentation/documentation/Swift/AsyncSequence>,
+/// `TCAsyncPublisher` conforms to [AsyncSequence](https://developer.apple.com/documentation/swift/asyncsequence),
 /// which allows callers to receive values with the `for`-`await`-`in` syntax, rather than attaching a ``Combine/Subscriber``.
 ///
-/// Use the ``Combine/Publisher/values-1dm9r`` property of the ``Combine/Publisher`` protocol to wrap an existing
+/// Use the <doc://com.apple.documentation/documentation/Combine/Publisher/values-1dm9r> property of
+/// the <doc://com.apple.documentation/documentation/Combine/Publisher> protocol to wrap an existing
 /// publisher with an instance of this type.
 public struct TCAsyncPublisher<P: Publisher>: AsyncSequence, @unchecked Sendable where P.Failure == Never {
 
