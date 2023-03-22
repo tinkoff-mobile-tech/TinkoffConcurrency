@@ -17,6 +17,7 @@ which filters a sequence to only emit even integers. This example replaces the
 subscriber with a `for`-`await`-`in` loop that iterates over the ``TCAsyncPublisher``
 provided by the `asyncValues` property.
 
+```swift
     let numbers: [Int] = [1, 2, 3, 4, 5]
     let filtered = numbers.publisher
         .filter { $0 % 2 == 0 }
@@ -25,3 +26,4 @@ provided by the `asyncValues` property.
     {
         print("\(number)", terminator: " ")
     }
+```
