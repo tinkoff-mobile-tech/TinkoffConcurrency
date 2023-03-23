@@ -102,7 +102,7 @@ class ExampleModel: ObservableObject {
     func exampleTask(duration: Double, completion: @escaping (Result<String, Error>) -> Void) -> TCCancellable {
         let startDate = Date()
 
-        Timer.publish(every: 0.1, on: .main, in: .default)
+        let cancellable = Timer.publish(every: 0.1, on: .main, in: .default)
             .autoconnect()
             .map { _ in -startDate.timeIntervalSinceNow / duration }
             .prefix(while: { $0 <= 1 })
@@ -112,8 +112,10 @@ class ExampleModel: ObservableObject {
             } receiveValue: { [weak self] value in
                 self?.progress = value
             }
-        
-        return TCCancellableClosure { }
+
+        return TCCancellableClosure {
+            cancellable.cancel()            
+        }
     }
 
     // MARK: - Wrapping Variants

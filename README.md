@@ -3,6 +3,9 @@
 ## TL;DR
 
 ```swift
+// Make URLSessionDataTask conform to TCCancellable
+extension URLSessionDataTask: TCCancellable {}
+
 func download(from url: URL) async throws -> Data {
     await withCheckedThrowingCancellableContinuation{ completion in
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -19,6 +22,17 @@ func download(from url: URL) async throws -> Data {
 
         return task
     }
+}
+```
+
+```swift
+let numbers: [Int] = [1, 2, 3, 4, 5]
+let filtered = numbers.publisher
+    .filter { $0 % 2 == 0 }
+
+// Available from iOS 13
+for await number in filtered.asyncValues {
+    print("\(number)", terminator: " ")
 }
 ```
 
@@ -53,3 +67,7 @@ Aleksandr Darovskikh, ext.adarovskikh@tinkoff.ru
 ## License
 
 TinkoffConcurrency is available under the Apache 2.0 license. See the LICENSE file for more info.
+
+## Attributions
+
+Thank you [Point-free](https://github.com/pointfreeco/combine-schedulers) for test Combine scheduler
