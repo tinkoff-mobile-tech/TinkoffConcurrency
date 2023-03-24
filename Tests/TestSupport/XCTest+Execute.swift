@@ -50,6 +50,30 @@ extension XCTest {
         return nil
     }
 
+    /// Executes expression and asserts that it throws. Returns an error being thrown.
+    ///
+    /// Throwing ensures this method to return an error, so it's safe to force-unwrap that like so:
+    /// ```
+    /// let error = XCTExecuteThrowsError(
+    ///     try requestService.execute()
+    /// )!
+    /// ```
+    func XCTExecuteThrowsError<T>(_ expression: @autoclosure () throws -> T,
+                                  file: StaticString = #filePath,
+                                  line: UInt = #line) -> Error! {
+        do {
+            _ = try expression()
+
+            XCTFail("Expression should throw", file: file, line: line)
+        } catch is CancellationError {
+            XCTFail("Unexpected cancellation", file: file, line: line)
+        } catch {
+            return error
+        }
+
+        return nil
+    }
+
     /// Asserts that given expression cancels its execution
     ///
     /// ```
