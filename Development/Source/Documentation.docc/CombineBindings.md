@@ -1,8 +1,10 @@
 # Combine bindings for legacy systems
 
-A bridge between Combine Publishers and Swift AsyncSequence 
+A bridge between Combine Publishers and Swift Concurrency 
 
 ## Overview
+
+### `asyncValues`
 
 TinkoffConcurrency provides a [Publisher.values](https://developer.apple.com/documentation/combine/publisher/values-v7nz)
 alternative which allows you to use the Swift `async`-`await` syntax to receive the publisher's elements.
