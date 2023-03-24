@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TinkoffConcurrency'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A toolset that makes Swift Concurrency a bit easier.'
 
   s.description      = <<-DESC
