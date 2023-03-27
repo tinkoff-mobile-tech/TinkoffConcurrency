@@ -26,14 +26,22 @@ func download(from url: URL) async throws -> Data {
 ```
 
 ```swift
-let numbers: [Int] = [1, 2, 3, 4, 5]
-let filtered = numbers.publisher
+let channel = TCAsyncChannel<Int, Never>()
+let filtered = channel
     .filter { $0 % 2 == 0 }
 
-// Available from iOS 13
-for await number in filtered.asyncValues {
-    print("\(number)", terminator: " ")
+Task {
+    // Available from iOS 13
+    for await number in filtered.asyncValues {
+        print("\(number)", terminator: " ")
+    }
 }
+
+try await channel.send(1)
+try await channel.send(2)
+try await channel.send(3)
+
+try channel.send(completion: .finished)
 ```
 
 ## Requirements
