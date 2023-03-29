@@ -217,6 +217,7 @@ public final class TCAsyncChannel<Output, Failure: Error>: Publisher {
         }
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     private func process(event: Event) -> [Action] {
         defer { lock.unlock() }
 
