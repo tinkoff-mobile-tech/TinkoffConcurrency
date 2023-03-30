@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "TinkoffConcurrency",
+  name: "tinkoff-concurrency",
   platforms: [
     .iOS(.v13),
     .macOS(.v10_15),
