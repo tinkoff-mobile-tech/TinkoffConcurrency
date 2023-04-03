@@ -10,7 +10,7 @@ import Combine
 ///  It follows original  [AsyncThrowingPublisher](https://developer.apple.com/documentation/combine/asyncthrowingpublisher)
 ///  contract, but is accessible from earlier OS versions.
 ///
-/// Use the ``asyncValues`` property of the [Publisher](https://developer.apple.com/documentation/combine/publisher)
+/// Use the ``TinkoffConcurrency/Combine/Publisher/asyncValues-5znmm`` property of the [Publisher](https://developer.apple.com/documentation/combine/publisher)
 /// protocol to wrap an existing publisher with an instance of this type.
 public struct TCAsyncThrowingPublisher<P: Publisher>: AsyncSequence, @unchecked Sendable {
 
@@ -84,7 +84,7 @@ public struct TCAsyncThrowingPublisher<P: Publisher>: AsyncSequence, @unchecked 
 ///  It follows original  [AsyncPublisher](https://developer.apple.com/documentation/combine/asyncpublisher)
 ///  contract, but is accessible from earlier OS versions.
 ///  
-/// Use the ``asyncValues`` property of the [Publisher](https://developer.apple.com/documentation/combine/publisher)
+/// Use the ``TinkoffConcurrency/Combine/Publisher/asyncValues-9cr4h`` property of the [Publisher](https://developer.apple.com/documentation/combine/publisher)
 /// protocol to wrap an existing publisher with an instance of this type.
 /// publisher with an instance of this type.
 public struct TCAsyncPublisher<P: Publisher>: AsyncSequence, @unchecked Sendable where P.Failure == Never {
@@ -457,8 +457,9 @@ extension Publisher {
     /// operator's documentation, which filters a sequence to only emit even integers and terminate with an error on a `0`. This example replaces the
     /// [Subscribers.Sink](https://developer.apple.com/documentation/combine/subscribers/sink)
     /// subscriber with a `for`-`await`-`in` loop that iterates over the ``TCAsyncThrowingPublisher``
-    /// provided by the `asyncValues` property.
+    /// provided by the ``TinkoffConcurrency/Combine/Publisher/asyncValues-5znmm`` property.
     ///
+    /// ```swift
     ///     let numbers: [Int] = [1, 2, 3, 4, 0, 5]
     ///     let filterPublisher = numbers.publisher
     ///         .tryFilter{
@@ -476,6 +477,7 @@ extension Publisher {
     ///     } catch {
     ///         print ("\(error)")
     ///     }
+    /// ```
     ///
     public var asyncValues: TCAsyncThrowingPublisher<Self> {
         TCAsyncThrowingPublisher(self)
@@ -500,8 +502,9 @@ extension Publisher where Self.Failure == Never {
     /// which filters a sequence to only emit even integers. This example replaces the
     /// [Subscribers.Sink](https://developer.apple.com/documentation/combine/subscribers/sink)
     /// subscriber with a `for`-`await`-`in` loop that iterates over the ``TCAsyncPublisher``
-    /// provided by the `asyncValues` property.
+    /// provided by the ``TinkoffConcurrency/Combine/Publisher/asyncValues-9cr4h`` property.
     ///
+    /// ```swift
     ///     let numbers: [Int] = [1, 2, 3, 4, 5]
     ///     let filtered = numbers.publisher
     ///         .filter { $0 % 2 == 0 }
@@ -510,6 +513,7 @@ extension Publisher where Self.Failure == Never {
     ///     {
     ///         print("\(number)", terminator: " ")
     ///     }
+    /// ```
     ///
     public var asyncValues: TCAsyncPublisher<Self> {
         TCAsyncPublisher(self)

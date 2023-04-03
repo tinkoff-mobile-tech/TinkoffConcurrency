@@ -15,7 +15,7 @@ The example adapts a code snippet from the [filter(_:)](https://developer.apple.
 which filters a sequence to only emit even integers. This example replaces the
 [Subscribers.Sink](https://developer.apple.com/documentation/combine/subscribers/sink)
 subscriber with a `for`-`await`-`in` loop that iterates over the ``TCAsyncPublisher``
-provided by the `asyncValues` property.
+provided by the ``TinkoffConcurrency/Combine/Publisher/asyncValues-9cr4h`` property.
 
 ```swift
     let numbers: [Int] = [1, 2, 3, 4, 5]
