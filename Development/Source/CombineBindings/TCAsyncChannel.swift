@@ -16,6 +16,33 @@ public enum TCAsyncChannelErrors: Error {
     case outputToFinished
 }
 
+/// A channel for sending values from Swift Concurrency task to Combine with backpressure
+///
+/// The `TCAsyncChannel` class is intended to send values that can be consumed by Combine
+/// respecting Combine's backpressure mechanism. In contrast to [PassthroughSubject](https://developer.apple.com/documentation/combine/passthroughsubject),
+/// which would drop values if there's no downstream demand,
+/// `TCAsyncChannel`.``TCAsyncChannel/send(_:)`` will await only when there's at least one subscriber, and all subscribers can receive next value.
+///
+/// See <doc:CombineBindings> article for details.
+///
+/// The usage example below illustrates how to synchronize data reads and writes using ``TCAsyncChannel``.
+/// 
+/// ```swift
+/// let channel = TCAsyncChannel<String, Error>()
+///
+/// Task {
+///     while let value = getValue() {
+///         try await channel.send(value)
+///     }
+///
+///     try channel.send(completion: .finished)
+/// }
+///
+/// for await value in channel.asyncValues {
+///     await useValue(value)
+/// }
+/// ```
+
 public final class TCAsyncChannel<Output, Failure: Error>: Publisher {
 
     // MARK: - Private Type Aliases
@@ -115,6 +142,7 @@ public final class TCAsyncChannel<Output, Failure: Error>: Publisher {
     /// Send value respecting Combine backpressure.
     /// - Parameters:
     ///   - value: A value to send.
+    /// - Throws: An error of type ``TCAsyncChannelErrors``.
     public func send(_ value: Output) async throws {
         try await withTaskCancellationHandler {
             try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
