@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+**Add**
+
+- `TCAsyncChannel` a subject-like object which sends data respecting Combine's backpressure.
+
 ### [1.1.0] - 2023-03-24Z
 
 **Add**

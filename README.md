@@ -51,12 +51,33 @@ It's advisable to use Xcode at least 13.2.1 or higher, as it provides backward c
 
 ## Installation
 
+### CocoaPods
+
 TinkoffConcurrency is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'TinkoffConcurrency'
 ```
+
+### Swift Package Manager
+
+1. From _File_ menu, select _Add Packages..._
+
+2. Enter `https://github.com/tinkoff-mobile-tech/TinkoffConcurrency` into repository URL
+
+3. Select _Up to Next Major Version_, and use `1.1.0` as a minimum version
+
+4. Select your project in _Add to Project_ and click _Add Package_
+
+5. In opened dialog, choose target to add library to
+
+## Documentation
+
+The documentation is available here:
+
+* [`main`](https://tinkoff-mobile-tech.github.io/TinkoffConcurrency/main/documentation/tinkoffconcurrency/)
+* [`1.1.0`](https://tinkoff-mobile-tech.github.io/TinkoffConcurrency/1.1.0/documentation/tinkoffconcurrency/)
 
 ## Example
 
@@ -70,6 +91,7 @@ library on older iOS versions.
 ## Authors
 
 Timur Khamidov, t.khamidov@tinkoff.ru
+
 Aleksandr Darovskikh, ext.adarovskikh@tinkoff.ru
 
 ## License
