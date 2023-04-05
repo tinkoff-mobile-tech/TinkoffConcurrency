@@ -1,4 +1,12 @@
 version: 1
 builder:
   configs:
-    - documentation_targets: [TinkoffConcurrency]
+  - platform: ios
+    scheme: TinkoffConcurrency
+  - platform: macos-xcodebuild
+    scheme: TinkoffConcurrency
+  - platform: tvos
+    scheme: TinkoffConcurrency
+  - platform: watchos
+    scheme: TinkoffConcurrency
+  - documentation_targets: [TinkoffConcurrency]
