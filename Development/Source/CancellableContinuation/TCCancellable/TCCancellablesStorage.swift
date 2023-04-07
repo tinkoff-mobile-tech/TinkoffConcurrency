@@ -1,7 +1,7 @@
 import Foundation
 
 /// A storage of cancellable operations.
-public final class TCCancellablesStorage: TCCancellable {
+public final class TCCancellablesStorage: TCCancellable, @unchecked Sendable {
 
     // MARK: - Nested Types
 
@@ -140,5 +140,11 @@ public final class TCCancellablesStorage: TCCancellable {
         lock.unlock()
 
         return true
+    }
+}
+
+extension ITask {
+    @discardableResult public func store(in storage: TCCancellablesStorage) -> Bool {
+        storage.add(self)
     }
 }

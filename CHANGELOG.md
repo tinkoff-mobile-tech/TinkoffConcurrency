@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+**Add**
+
+- `ITask`
+- `AnyTask`
+- `TaskFactory`
+- `TestTaskFactory`
+- `UncheckedSendable`
+
 ## [1.2.0] - 2023-04-05Z
 
 **Add**
