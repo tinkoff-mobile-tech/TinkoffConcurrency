@@ -77,7 +77,15 @@ pod 'TinkoffConcurrency'
 The documentation is available here:
 
 * [`main`](https://tinkoff-mobile-tech.github.io/TinkoffConcurrency/main/documentation/tinkoffconcurrency/)
+* [`1.2.0`](https://tinkoff-mobile-tech.github.io/TinkoffConcurrency/1.2.0/documentation/tinkoffconcurrency/)
+
+<details>
+  <summary>
+  Old versions
+  </summary>
+  
 * [`1.1.0`](https://tinkoff-mobile-tech.github.io/TinkoffConcurrency/1.1.0/documentation/tinkoffconcurrency/)
+</details>
 
 ## Example
 
