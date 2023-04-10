@@ -66,7 +66,7 @@ pod 'TinkoffConcurrency'
 
 2. Enter `https://github.com/tinkoff-mobile-tech/TinkoffConcurrency` into repository URL
 
-3. Select _Up to Next Major Version_, and use `1.1.0` as a minimum version
+3. Select _Up to Next Major Version_, and use `1.2.0` as a minimum version
 
 4. Select your project in _Add to Project_ and click _Add Package_
 
