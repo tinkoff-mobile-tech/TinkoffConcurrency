@@ -47,7 +47,7 @@ final class TCAsyncChannelTests: XCTestCase {
 
     func test_tcAsyncChannel_send_withBackpressure() async throws {
         // given
-        guard #available(iOS 15.0, *) else {
+        guard #available(iOS 15.0, macOS 12.0, *) else {
             throw XCTSkip("iOS 15 required")
         }
 

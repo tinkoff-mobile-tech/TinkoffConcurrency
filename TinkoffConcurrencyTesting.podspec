@@ -1,13 +1,10 @@
 Pod::Spec.new do |s|
-  s.name             = 'TinkoffConcurrency'
-  s.version          = '1.2.0'
-  s.summary          = 'A toolset that makes Swift Concurrency a bit easier.'
+  s.name             = 'TinkoffConcurrencyTesting'
+  s.version          = '1.0.0'
+  s.summary          = 'A toolset that makes Swift Concurrency testing a bit easier.'
 
   s.description      = <<-DESC
-                     A set of handful tools that would help adopting an existing codebase to Swift Concurrency, including
-                       * A general-purpose cancellables storage
-                       * A robust `withTrowingContinuation` alternative that supports task cancelling and converts all cancelling
-                         contracts to Swift Concurrency requirements.
+                     A set of tools that would help testing parts of code combining synchronous and asynchronous parts
                        DESC
 
   s.homepage         = 'https://github.com/tinkoff-mobile-tech/TinkoffConcurrency'
@@ -22,9 +19,11 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '13.0'
   s.swift_version = '5.5'
 
-  s.source_files = 'Development/TinkoffConcurrency/**/*.{swift,md,docc}'
+  s.source_files = 'Development/TinkoffConcurrencyTesting/**/*.{swift,md,docc}'
+  
+  s.dependency 'TinkoffConcurrency', '~> 1.2.0'
 
   s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = ["Tests/TinkoffConcurrency/**/*.swift", "Tests/TestSupport/**/*.swift"]
+    test_spec.source_files = ["Tests/TinkoffConcurrencyTesting/**/*.swift", "Tests/TestSupport/**/*.swift"]
   end
 end

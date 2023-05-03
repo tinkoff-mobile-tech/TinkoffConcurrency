@@ -4,4 +4,5 @@ platform :ios, '15.0'
 
 target 'TinkoffConcurrency_Example' do
   pod 'TinkoffConcurrency', path: '../', testspecs: ['Tests']
+  pod 'TinkoffConcurrencyTesting', path: '../', testspecs: ['Tests']
 end
