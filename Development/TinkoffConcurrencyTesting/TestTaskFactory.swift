@@ -8,7 +8,7 @@ public final class TCTestTaskFactory {
     // MARK: - Private Properties
     
     private let lock = NSLock()
-    private var tasks: [any ITask] = []
+    private var tasks: [ITask] = []
 
     // MARK: - Initializers
 
@@ -25,7 +25,7 @@ public final class TCTestTaskFactory {
 
     // MARK: - Private Methods
     
-    private func addTask(_ task: any ITask) {
+    private func addTask(_ task: ITask) {
         lock.lock()
         defer {
             lock.unlock()
@@ -34,7 +34,7 @@ public final class TCTestTaskFactory {
         tasks.append(task)
     }
 
-    private func popTask() -> (any ITask)? {
+    private func popTask() -> ITask? {
         lock.lock()
         defer {
             lock.unlock()
