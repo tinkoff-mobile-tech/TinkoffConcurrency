@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+**Add**
+
+- **TinkoffConcurrency**
+  
+  - `TCTaskFactory` a tool to abstract task creation
+
+- **TinkoffConcurrencyTesting**
+  
+  - `TCTestTaskFactory` a tool to collect created tasks and wait for them to complete. To be used in unit tests.
+
 ## [1.2.0] - 2023-04-05Z
 
 **Add**
