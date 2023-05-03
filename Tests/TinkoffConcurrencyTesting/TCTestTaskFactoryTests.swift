@@ -2,7 +2,7 @@ import XCTest
 
 import TinkoffConcurrencyTesting
 
-final class TaskFactoryTests: XCTestCase {
+final class TCTestTaskFactoryTests: XCTestCase {
 
     // MARK: - Dependencies
 
@@ -13,11 +13,6 @@ final class TaskFactoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         taskFactory = TCTestTaskFactory()
-    }
-
-    override func tearDown() {
-        taskFactory = nil
-        super.tearDown()
     }
 
     // MARK: - Tests

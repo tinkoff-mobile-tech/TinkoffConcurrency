@@ -47,12 +47,23 @@ public final class TCTestTaskFactory {
 extension TCTestTaskFactory: ITCTaskFactory {
     
     // MARK: - ITCTaskFactory
-
+    
     @discardableResult
     public func task<T: Sendable>(
         priority: TaskPriority?,
         @_inheritActorContext operation: @escaping @Sendable () async throws -> T
     ) -> Task<T, Error> {
+        let task = Task(priority: priority, operation: operation)
+        
+        addTask(task)
+        
+        return task
+    }
+    
+    public func task<T: Sendable>(
+        priority: TaskPriority?,
+        @_inheritActorContext operation: @escaping @Sendable () async -> T
+    ) -> Task<T, Never> {
         let task = Task(priority: priority, operation: operation)
         
         addTask(task)
