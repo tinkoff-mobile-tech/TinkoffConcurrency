@@ -9,6 +9,7 @@ Some of these issues are
 
 - <doc:CancellableContinuation>
 - <doc:CombineBindings>
+- <doc:TaskManagement>
 
 This library provides ``withCheckedThrowingCancellableContinuation(function:_:)`` method to wrap existing
 callback-based code as one would do using 
