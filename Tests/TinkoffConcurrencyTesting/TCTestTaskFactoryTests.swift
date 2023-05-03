@@ -25,7 +25,7 @@ final class TCTestTaskFactoryTests: XCTestCase {
         let task = taskFactory.task {
             isTaskStarted.mutate { $0 = true }
         }
-        _ = try await task.value
+        _ = await task.value
         
         // then
         XCTAssertTrue(isTaskStarted.value)
@@ -42,7 +42,7 @@ final class TCTestTaskFactoryTests: XCTestCase {
                 finishedTasksCount.mutate { $0 += 1 }
             }
         }
-        try await taskFactory.runUntilIdle()
+        await taskFactory.runUntilIdle()
         
         // then
         XCTAssertEqual(finishedTasksCount.value, tasksCount)
@@ -60,7 +60,7 @@ final class TCTestTaskFactoryTests: XCTestCase {
             }
             finishedTasksCount.mutate { $0 += 1 }
         }
-        try await taskFactory.runUntilIdle()
+        await taskFactory.runUntilIdle()
         
         // then
         XCTAssertEqual(finishedTasksCount.value, tasksCount)
