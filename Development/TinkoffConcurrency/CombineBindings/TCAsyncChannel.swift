@@ -43,7 +43,7 @@ public enum TCAsyncChannelErrors: Error {
 /// }
 /// ```
 
-public final class TCAsyncChannel<Output, Failure: Error>: Publisher {
+public final class TCAsyncChannel<Output, Failure: Error>: Publisher, @unchecked Sendable {
 
     // MARK: - Private Type Aliases
 

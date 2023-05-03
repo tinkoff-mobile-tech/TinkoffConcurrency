@@ -1,7 +1,7 @@
 import Foundation
 
 /// An object that captures a closure to execute upon cancellation.
-public final class TCCancellableClosure: TCCancellable {
+public final class TCCancellableClosure: TCCancellable, @unchecked Sendable {
 
     // MARK: - Private Properties
 
