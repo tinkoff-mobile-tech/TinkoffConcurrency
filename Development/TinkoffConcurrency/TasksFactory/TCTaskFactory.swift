@@ -28,6 +28,30 @@ public protocol ITCTaskFactory {
         priority: TaskPriority?,
         @_inheritActorContext operation: @escaping @Sendable () async -> T
     ) -> Task<T, Never>
+    
+    /// Create detached asynchronous task.
+    ///
+    /// - Parameters:
+    ///   - priority: The priority of the task.
+    ///   - operation: The operation to perform.
+    /// - Returns: type erasured asynchronous task.
+    @discardableResult
+    func detached<T: Sendable>(
+        priority: TaskPriority?,
+        operation: @escaping @Sendable () async throws -> T
+    ) -> Task<T, Error>
+    
+    /// Create detached asynchronous task.
+    ///
+    /// - Parameters:
+    ///   - priority: The priority of the task.
+    ///   - operation: The operation to perform.
+    /// - Returns: type erasured asynchronous task.
+    @discardableResult
+    func detached<T: Sendable>(
+        priority: TaskPriority?,
+        operation: @escaping @Sendable () async -> T
+    ) -> Task<T, Never>
 }
 
 public extension ITCTaskFactory {
@@ -46,6 +70,20 @@ public extension ITCTaskFactory {
         @_inheritActorContext operation: @escaping @Sendable () async -> T
     ) -> Task<T, Never> {
         task(priority: nil, operation: operation)
+    }
+    
+    @discardableResult
+    func detached<T: Sendable>(
+        operation: @escaping @Sendable () async throws -> T
+    ) -> Task<T, Error> {
+        detached(priority: nil, operation: operation)
+    }
+    
+    @discardableResult
+    func detached<T: Sendable>(
+        operation: @escaping @Sendable () async -> T
+    ) -> Task<T, Never> {
+        detached(priority: nil, operation: operation)
     }
 }
 
@@ -70,5 +108,19 @@ public struct TCTaskFactory: ITCTaskFactory {
         @_inheritActorContext operation: @escaping @Sendable () async -> T
     ) -> Task<T, Never> {
         Task(priority: priority, operation: operation)
+    }
+    
+    public func detached<T: Sendable>(
+        priority: TaskPriority?,
+        operation: @escaping @Sendable () async throws -> T
+    ) -> Task<T, Error> {
+        Task.detached(priority: priority, operation: operation)
+    }
+    
+    public func detached<T: Sendable>(
+        priority: TaskPriority?,
+        operation: @escaping @Sendable () async -> T
+    ) -> Task<T, Never> {
+        Task.detached(priority: priority, operation: operation)
     }
 }

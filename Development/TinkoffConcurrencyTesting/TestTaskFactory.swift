@@ -3,7 +3,7 @@ import TinkoffConcurrency
 
 /// Factory for using in tests.
 /// It is helpful for waiting for guaranteed completion of all asynchronous tasks and performing asserts without expectations.
-public final class TCTestTaskFactory {
+public final class TCTestTaskFactory: @unchecked Sendable {
     
     // MARK: - Private Properties
     
@@ -65,6 +65,29 @@ extension TCTestTaskFactory: ITCTaskFactory {
         @_inheritActorContext operation: @escaping @Sendable () async -> T
     ) -> Task<T, Never> {
         let task = Task(priority: priority, operation: operation)
+        
+        addTask(task)
+        
+        return task
+    }
+    
+    @discardableResult
+    public func detached<T: Sendable>(
+        priority: TaskPriority?,
+        operation: @escaping @Sendable () async throws -> T
+    ) -> Task<T, Error> {
+        let task = Task.detached(priority: priority, operation: operation)
+        
+        addTask(task)
+        
+        return task
+    }
+    
+    public func detached<T: Sendable>(
+        priority: TaskPriority?,
+        operation: @escaping @Sendable () async -> T
+    ) -> Task<T, Never> {
+        let task = Task.detached(priority: priority, operation: operation)
         
         addTask(task)
         
