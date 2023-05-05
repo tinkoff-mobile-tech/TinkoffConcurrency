@@ -21,8 +21,10 @@ final class TCTestTaskFactoryTests: XCTestCase {
 
     // MARK: - Tests
 
-    func test_taskStarted_whenTaskCreated() async throws {
+    func test_taskStarted_whenTaskCreated() async {
         // given
+        let result = Int.fake()
+        
         let isTaskStarted = UncheckedSendable(false)
         
         // when
@@ -31,16 +33,22 @@ final class TCTestTaskFactoryTests: XCTestCase {
                 isTaskStarted.mutate { $0 = true }
                 
                 XCTAssertEqual(TCTestTaskFactoryTests.testValue, 999)
+                
+                return result
             }
         }
-        _ = await task.value
+        let taskResult = await task.value
         
         // then
         XCTAssertTrue(isTaskStarted.value)
+        
+        XCTAssertEqual(taskResult, result)
     }
 
-    func test_taskStarted_whenDetachedTaskCreated() async throws {
+    func test_taskStarted_whenDetachedTaskCreated() async {
         // given
+        let result = Int.fake()
+        
         let isTaskStarted = UncheckedSendable(false)
                 
         // when
@@ -49,12 +57,64 @@ final class TCTestTaskFactoryTests: XCTestCase {
                 isTaskStarted.mutate { $0 = true }
                 
                 XCTAssertEqual(TCTestTaskFactoryTests.testValue, 42)
+
+                return result
             }
         }
-        _ = await task.value
+        let taskResult = await task.value
+
+        // then
+        XCTAssertTrue(isTaskStarted.value)
+        
+        XCTAssertEqual(taskResult, result)
+    }
+    
+    func test_taskStarted_whenThrowingTaskCreated() async throws {
+        // given
+        let result = FakeErrors.default
+
+        let isTaskStarted = UncheckedSendable(false)
+        
+        // when
+        let task = TCTestTaskFactoryTests.$testValue.withValue(999) {
+            taskFactory.task {
+                isTaskStarted.mutate { $0 = true }
+                                
+                XCTAssertEqual(TCTestTaskFactoryTests.testValue, 999)
+                
+                throw result
+            }
+        }
+        let error = await XCTExecuteThrowsError(try await task.value)
         
         // then
         XCTAssertTrue(isTaskStarted.value)
+        
+        XCTAssertEqualErrors(error, result)
+    }
+
+    func test_taskStarted_whenThrowingDetachedTaskCreated() async throws {
+        // given
+        let result = FakeErrors.default
+
+        let isTaskStarted = UncheckedSendable(false)
+                
+        // when
+        let task = TCTestTaskFactoryTests.$testValue.withValue(999) {
+            taskFactory.detached {
+                isTaskStarted.mutate { $0 = true }
+
+                XCTAssertEqual(TCTestTaskFactoryTests.testValue, 42)
+                
+                throw result
+            }
+        }
+        let error = await XCTExecuteThrowsError(try await task.value)
+
+        // then
+        XCTAssertTrue(isTaskStarted.value)
+
+        XCTAssertEqualErrors(error, result)
     }
 
     func test_runUntilIdle_whenCreatedSeveralTasks() async throws {
