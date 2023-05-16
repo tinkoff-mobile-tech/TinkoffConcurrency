@@ -1,6 +1,7 @@
 PODS:
   - TinkoffConcurrency (1.2.0)
-  - TinkoffConcurrency/Tests (1.2.0)
+  - TinkoffConcurrency/Tests (1.2.0):
+    - TinkoffConcurrencyTesting (~> 1.2.0)
   - TinkoffConcurrencyTesting (1.2.0):
     - TinkoffConcurrency (~> 1.2.0)
   - TinkoffConcurrencyTesting/Tests (1.2.0):
@@ -19,7 +20,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TinkoffConcurrency: c733c4635a33a074bc64e1d72e03ba7d5affd4c7
+  TinkoffConcurrency: a63843ad0a598fa151732a5738ba2109049cc8d4
   TinkoffConcurrencyTesting: ddddbefe4e962b54464ce2069db26e6558e51e47
 
 PODFILE CHECKSUM: 59bbb119a3817973bcf62c31b9a94125545be248
