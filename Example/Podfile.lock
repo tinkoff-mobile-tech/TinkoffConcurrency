@@ -1,9 +1,9 @@
 PODS:
   - TinkoffConcurrency (1.2.0)
   - TinkoffConcurrency/Tests (1.2.0)
-  - TinkoffConcurrencyTesting (1.0.0):
+  - TinkoffConcurrencyTesting (1.2.0):
     - TinkoffConcurrency (~> 1.2.0)
-  - TinkoffConcurrencyTesting/Tests (1.0.0):
+  - TinkoffConcurrencyTesting/Tests (1.2.0):
     - TinkoffConcurrency (~> 1.2.0)
 
 DEPENDENCIES:
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   TinkoffConcurrency: c733c4635a33a074bc64e1d72e03ba7d5affd4c7
-  TinkoffConcurrencyTesting: 784f4c4d2a379d3f9c82cd5fc315b3f231ea6138
+  TinkoffConcurrencyTesting: ddddbefe4e962b54464ce2069db26e6558e51e47
 
 PODFILE CHECKSUM: 59bbb119a3817973bcf62c31b9a94125545be248
 
