@@ -4,9 +4,9 @@ import TinkoffConcurrency
 import TinkoffConcurrencyTesting
 
 final class TCAsyncQueueTests: XCTestCase {
-
+    
     // MARK: - Dependencies
-
+    
     private var taskFactory: TCTestTaskFactory!
 
     // MARK: - XCTestCase
@@ -121,6 +121,46 @@ final class TCAsyncQueueTests: XCTestCase {
 
         // then
         XCTAssertEqualErrors(result, queueEnqueueResult)
+    }
+
+    func test_asyncQueue_perform() async throws {
+        // given
+        let queue = TCAsyncQueue(taskFactory: taskFactory)
+
+        let queueEnqueueResult = String.fake()
+
+        // when
+        let result = await queue.perform {
+            queueEnqueueResult
+        }
+
+        await taskFactory.runUntilIdle()
+
+        // then
+        XCTAssertEqual(result, queueEnqueueResult)
+    }
+
+    func test_asyncQueue_perform_cancel() async throws {
+        // given
+        let queue = TCAsyncQueue(taskFactory: taskFactory)
+
+        let expectation = expectation(description: "operation started")
+
+        // when
+        let task = Task {
+            await XCTWaiter.waitAsync(for: [expectation], timeout: 1)
+
+            await queue.perform {
+                // then
+                XCTAssertTrue(Task.isCancelled)
+            }
+        }
+
+        task.cancel()
+
+        expectation.fulfill()
+
+        await taskFactory.runUntilIdle()
     }
 }
 

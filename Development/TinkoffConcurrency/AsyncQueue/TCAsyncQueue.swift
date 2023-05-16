@@ -10,7 +10,7 @@ public final actor TCAsyncQueue {
     
     // MARK: - Initializers
 
-    public init(taskFactory: ITCTaskFactory) {
+    public init(taskFactory: ITCTaskFactory = TCTaskFactory()) {
         self.taskFactory = taskFactory
     }
     
@@ -44,5 +44,20 @@ public final actor TCAsyncQueue {
         self.lastEnqueuedTask = task
         
         return task
+    }
+}
+
+extension TCAsyncQueue {
+    
+    // MARK: - Methods
+
+    public func perform<T>(operation: @escaping @Sendable () async throws -> T) async rethrows -> T {
+        let task = enqueue(operation: operation)
+        
+        return try await withTaskCancellationHandler {
+            try await task.value
+        } onCancel: {
+            task.cancel()
+        }
     }
 }
