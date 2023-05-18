@@ -4,11 +4,11 @@ extension NSLock {
 
     // MARK: - Methods
 
-    public func access<T>(_ executionBlock: () -> T) -> T {
+    public func access<T>(_ executionBlock: () throws -> T) rethrows -> T {
         defer { unlock() }
 
         lock()
 
-        return executionBlock()
+        return try executionBlock()
     }
 }

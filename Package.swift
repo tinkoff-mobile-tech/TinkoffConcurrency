@@ -14,6 +14,10 @@ let package = Package(
     .library(
       name: "TinkoffConcurrency",
       targets: ["TinkoffConcurrency"]
+    ),
+    .library(
+      name: "TinkoffConcurrencyTesting",
+      targets: ["TinkoffConcurrencyTesting"]
     )
   ],
   dependencies: [
@@ -22,11 +26,16 @@ let package = Package(
   targets: [
     .target(
       name: "TinkoffConcurrency",
-      path: "Development/Source"
+      path: "Development/TinkoffConcurrency"
+    ),
+    .target(
+      name: "TinkoffConcurrencyTesting",
+      dependencies: ["TinkoffConcurrency"],
+      path: "Development/TinkoffConcurrencyTesting"
     ),
     .testTarget(
       name: "TinkoffConcurrency_Tests",
-      dependencies: ["TinkoffConcurrency"],
+      dependencies: ["TinkoffConcurrency", "TinkoffConcurrencyTesting"],
       path: "Tests"
     )
   ]

@@ -1,7 +1,7 @@
 import Foundation
 
 /// A storage of cancellable operations.
-public final class TCCancellablesStorage: TCCancellable {
+public final class TCCancellablesStorage: TCCancellable, @unchecked Sendable {
 
     // MARK: - Nested Types
 
