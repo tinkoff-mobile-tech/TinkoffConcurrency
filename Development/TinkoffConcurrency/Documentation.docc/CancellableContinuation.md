@@ -59,6 +59,9 @@ func someAsyncCancellableOperation() async throws -> String {
 }
 ```
 
+Please be sure NOT to return [AnyCancellable](https://developer.apple.com/documentation/combine/anycancellable), because it cancels on
+deallocation, and unexpected cancel closure calls may happen.
+
 ``withCheckedThrowingCancellableContinuation(function:_:)`` ensures that continuation will be resumed only once, either
 by resolving a completion closure, or when task is cancelled. In later case, it throws 
 [CancellationError](https://developer.apple.com/documentation/swift/cancellationerror). That's why only throwing variant
