@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.0.0] - 2023-05-29Z
+
 **Add**
 
 - **TinkoffConcurrency**
