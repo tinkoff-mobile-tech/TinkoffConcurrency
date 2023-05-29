@@ -63,10 +63,10 @@ final class WithCheckedThrowingCancellableContinuationTests: XCTestCase {
         // when
         let task = Task {
             await XCTWaiter.waitAsync(for: [taskStartExpectation], timeout: 10)
-            
+
             _ = try await withCheckedThrowingCancellableContinuation { (completion: @escaping (Result<String, Error>) -> Void) in
                 completion(Result.success(String.fake()))
-                
+
                 return cancellable
             }
         }
@@ -184,5 +184,62 @@ final class WithCheckedThrowingCancellableContinuationTests: XCTestCase {
 
         // then
         XCTAssertTrue(cancellable.invokedCancel)
+    }
+
+    func test_withCheckedThrowingCancellableContinuation_cancellableRetainCycle() async {
+        // given
+        let processor = RetainingCancellableProcessor()
+        var task: Task<Void, Error>!
+        let cancellableIsDeinited = UncheckedSendable(false)
+
+        // when
+        task = Task {
+            try await withCheckedThrowingCancellableContinuation { completion in
+                return processor.performJob(
+                    shouldFinish: true,
+                    completion: completion,
+                    onDeinit: { cancellableIsDeinited.mutate { $0 = true } }
+                )
+            }
+        }
+
+        await XCTExecuteThrowsNoError(
+            try await task.value
+        )
+
+        // then
+        XCTAssertTrue(cancellableIsDeinited.value)
+    }
+
+    func test_withCheckedThrowingCancellableContinuation_cancellableRetainCycle_whenTaskIsCancelled() async {
+        // given
+        let bodyCompletionStartExpectation = expectation(description: "bodyCompletionStartExpectation")
+        let processor = RetainingCancellableProcessor()
+        var task: Task<Void, Error>!
+        let cancellableIsDeinited = UncheckedSendable(false)
+
+        // when
+        task = Task {
+            try await withCheckedThrowingCancellableContinuation { completion in
+                bodyCompletionStartExpectation.fulfill()
+
+                return processor.performJob(
+                    shouldFinish: false,
+                    completion: completion,
+                    onDeinit: { cancellableIsDeinited.mutate { $0 = true } }
+                )
+            }
+        }
+
+        await XCTWaiter.waitAsync(for: [bodyCompletionStartExpectation], timeout: 1)
+
+        task.cancel()
+
+        await XCTExecuteCancels(
+            try await task.value
+        )
+
+        // then
+        XCTAssertTrue(cancellableIsDeinited.value)
     }
 }

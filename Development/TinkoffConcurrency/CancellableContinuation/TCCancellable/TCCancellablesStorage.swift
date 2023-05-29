@@ -76,6 +76,8 @@ public final class TCCancellablesStorage: TCCancellable, @unchecked Sendable {
         _state = State.cancelled
 
         let cancellables = self.cancellables
+        
+        self.cancellables.removeAll()
 
         lock.unlock()
 
@@ -136,6 +138,8 @@ public final class TCCancellablesStorage: TCCancellable, @unchecked Sendable {
         }
 
         _state = State.deactivated
+
+        self.cancellables.removeAll()
 
         lock.unlock()
 
