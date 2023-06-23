@@ -25,6 +25,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Development/TinkoffConcurrency/**/*.{swift,md,docc}'
 
   s.test_spec 'Tests' do |test_spec|
+    test_spec.dependency 'TinkoffConcurrencyTesting', '~> 1.2.0'
+
     test_spec.source_files = ["Tests/TinkoffConcurrency/**/*.swift", "Tests/TestSupport/**/*.swift"]
   end
 end
