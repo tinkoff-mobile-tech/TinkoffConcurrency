@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TinkoffConcurrencyTesting'
-  s.version          = '2.0.1'
+  s.version          = '2.0.2'
   s.summary          = 'A toolset that makes Swift Concurrency testing a bit easier.'
 
   s.description      = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Development/TinkoffConcurrencyTesting/**/*.{swift,md,docc}'
   
-  s.dependency 'TinkoffConcurrency', '2.0.1'
+  s.dependency 'TinkoffConcurrency', '2.0.2'
 
   s.test_spec 'Tests' do |test_spec|
     test_spec.source_files = ["Tests/TinkoffConcurrencyTesting/**/*.swift", "Tests/TestSupport/**/*.swift"]

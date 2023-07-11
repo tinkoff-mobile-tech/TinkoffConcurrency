@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.0.2] - 2023-07-11Z
+
 **Add**
 
 - **Podspec**
