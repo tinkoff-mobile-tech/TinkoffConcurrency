@@ -105,7 +105,6 @@
 				123267E02942155F00E638F6 /* Sources */,
 				123267E12942155F00E638F6 /* Frameworks */,
 				123267E22942155F00E638F6 /* Resources */,
-				9971A610025EBB00B89D3EF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,23 +161,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9971A610025EBB00B89D3EF0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TinkoffConcurrency_Example/Pods-TinkoffConcurrency_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TinkoffConcurrency_Example/Pods-TinkoffConcurrency_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinkoffConcurrency_Example/Pods-TinkoffConcurrency_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D43C455F40E2C4FA48625B72 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
