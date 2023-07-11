@@ -1,0 +1,359 @@
+{
+  "abstract" : [
+    {
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "Equatable.!=(_:_:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannelErrors",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannelErrors\/Equatable-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannelErrors\/!=(_:_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Swift",
+    "externalID" : "s:SQsE2neoiySbx_xtFZ::SYNTHESIZED::s:18TinkoffConcurrency20TCAsyncChannelErrorsO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "!="
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Self"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Self"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TinkoffConcurrency"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Operator",
+    "symbolKind" : "op",
+    "title" : "!=(_:_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "!="
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "lhs"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "rhs"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/!=(_:_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency": {
+  "abstract" : [
+    {
+      "text" : "TinkoffConcurrency is a set of tools that fill some gaps when integrating Swift Concurrency to your project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TinkoffConcurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncChannel": {
+  "abstract" : [
+    {
+      "text" : "A channel for sending values from Swift Concurrency task to Combine with backpressure",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncChannel"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncChannel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCAsyncChannel",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncChannelErrors": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " errors",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncChannelErrors"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannelErrors",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncChannelErrors"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCAsyncChannelErrors",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncChannelErrors/!=(_:_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "!="
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannelErrors\/!=(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "!=(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/!=(_:_:)"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncChannelErrors/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannelErrors\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/equatable-implementations"
+}
+}
+}

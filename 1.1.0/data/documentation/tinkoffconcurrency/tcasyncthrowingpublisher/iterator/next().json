@@ -1,0 +1,418 @@
+{
+  "abstract" : [
+    {
+      "text" : "Produces the next element in the prefix sequence.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher\/Iterator"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher\/Iterator\/next()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV8IteratorV4next6OutputQzSgyYaKF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "next"
+      },
+      {
+        "kind" : "text",
+        "text" : "() "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "async"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV",
+        "text" : "TCAsyncThrowingPublisher"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "P"
+      },
+      {
+        "kind" : "text",
+        "text" : ">."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV8IteratorV",
+        "text" : "Iterator"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Element"
+      },
+      {
+        "kind" : "text",
+        "text" : "?"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TinkoffConcurrency"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "next()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "mutating"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "next"
+            },
+            {
+              "kind" : "text",
+              "text" : "() "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "async"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV",
+              "text" : "TCAsyncThrowingPublisher"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "P"
+            },
+            {
+              "kind" : "text",
+              "text" : ">."
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher\/Iterator",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV8IteratorV",
+              "text" : "Iterator"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Element"
+            },
+            {
+              "kind" : "text",
+              "text" : "?"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The next published element, or nil if the publisher finishes normally.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If the publisher terminates with an error, the call point receives the error as a ",
+              "type" : "text"
+            },
+            {
+              "code" : "throw",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator\/next()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency": {
+  "abstract" : [
+    {
+      "text" : "TinkoffConcurrency is a set of tools that fill some gaps when integrating Swift Concurrency to your project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TinkoffConcurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncThrowingPublisher": {
+  "abstract" : [
+    {
+      "text" : "A publisher that exposes its elements as an asynchronous sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncThrowingPublisher"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncThrowingPublisher"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCAsyncThrowingPublisher",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncThrowingPublisher/Iterator": {
+  "abstract" : [
+    {
+      "text" : "The iterator that produces elements of the asynchronous publisher sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Iterator"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher\/Iterator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Iterator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCAsyncThrowingPublisher.Iterator",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncThrowingPublisher/Iterator/next()": {
+  "abstract" : [
+    {
+      "text" : "Produces the next element in the prefix sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "next"
+    },
+    {
+      "kind" : "text",
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV",
+      "text" : "TCAsyncThrowingPublisher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18TinkoffConcurrency24TCAsyncThrowingPublisherV8IteratorV",
+      "text" : "Iterator"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncThrowingPublisher\/Iterator\/next()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "next()",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator\/next()"
+}
+}
+}

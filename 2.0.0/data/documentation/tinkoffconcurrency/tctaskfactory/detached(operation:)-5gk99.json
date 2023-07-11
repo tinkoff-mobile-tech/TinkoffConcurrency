@@ -1,0 +1,440 @@
+{
+  "abstract" : [
+    {
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "ITCTaskFactory.detached(operation:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCTaskFactory",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCTaskFactory\/ITCTaskFactory-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCTaskFactory\/detached(operation:)-5gk99"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "TinkoffConcurrency",
+    "externalID" : "s:18TinkoffConcurrency14ITCTaskFactoryPAAE8detached9operationScTyqd__s5Error_pGqd__yYaYbKc_ts8SendableRd__lF::SYNTHESIZED::s:18TinkoffConcurrency13TCTaskFactoryV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "detached"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : ">("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "operation"
+      },
+      {
+        "kind" : "text",
+        "text" : ": () "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "async"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:ScT",
+        "text" : "Task"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s5ErrorP",
+        "text" : "Error"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TinkoffConcurrency"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "detached(operation:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@discardableResult"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "detached"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : ">("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "operation"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "@escaping"
+            },
+            {
+              "kind" : "text",
+              "text" : " () "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "async"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:ScT",
+              "text" : "Task"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
+            },
+            {
+              "kind" : "text",
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(operation:)-5gk99"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency": {
+  "abstract" : [
+    {
+      "text" : "TinkoffConcurrency is a set of tools that fill some gaps when integrating Swift Concurrency to your project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TinkoffConcurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCTaskFactory": {
+  "abstract" : [
+    {
+      "text" : "Abstraction factory for running asynchronous tasks.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCTaskFactory"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCTaskFactory",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCTaskFactory"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCTaskFactory",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tctaskfactory"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCTaskFactory/ITCTaskFactory-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCTaskFactory\/ITCTaskFactory-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ITCTaskFactory Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/itctaskfactory-implementations"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCTaskFactory/detached(operation:)-5gk99": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "detached"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ScT",
+      "text" : "Task"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCTaskFactory\/detached(operation:)-5gk99",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "detached(operation:)",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(operation:)-5gk99"
+}
+}
+}

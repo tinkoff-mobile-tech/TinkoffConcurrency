@@ -1,0 +1,415 @@
+{
+  "abstract" : [
+    {
+      "text" : "A deactivated state indicating that all added cancellable operations were discarded.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage",
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/State-swift.enum"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/State-swift.enum\/deactivated"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18TinkoffConcurrency21TCCancellablesStorageC5StateO11deactivatedyA2EmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "deactivated"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TinkoffConcurrency"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "TCCancellablesStorage.State.deactivated"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "deactivated"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In this state, a cancellable operation can ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "not",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " be added using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/add(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " method and will be ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "ignored",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Calls of methods ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/cancel()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/deactivate()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " are ignored.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/deactivated"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency": {
+  "abstract" : [
+    {
+      "text" : "TinkoffConcurrency is a set of tools that fill some gaps when integrating Swift Concurrency to your project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TinkoffConcurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCCancellablesStorage": {
+  "abstract" : [
+    {
+      "text" : "A storage of cancellable operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCCancellablesStorage"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCCancellablesStorage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCCancellablesStorage",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCCancellablesStorage/State-swift.enum": {
+  "abstract" : [
+    {
+      "text" : "An enumeration of the storage’s states.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "State"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/State-swift.enum",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "State"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCCancellablesStorage.State",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCCancellablesStorage/State-swift.enum/deactivated": {
+  "abstract" : [
+    {
+      "text" : "A deactivated state indicating that all added cancellable operations were discarded.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deactivated"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/State-swift.enum\/deactivated",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "TCCancellablesStorage.State.deactivated",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/deactivated"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCCancellablesStorage/add(_:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a cancellable operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "add"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18TinkoffConcurrency13TCCancellableP",
+      "text" : "TCCancellable"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/add(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "add(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/add(_:)"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCCancellablesStorage/cancel()": {
+  "abstract" : [
+    {
+      "text" : "Cancels all added cancellable operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cancel"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/cancel()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cancel()",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/cancel()"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCCancellablesStorage/deactivate()": {
+  "abstract" : [
+    {
+      "text" : "Discards all added cancellable operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deactivate"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCCancellablesStorage\/deactivate()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "deactivate()",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/deactivate()"
+}
+}
+}

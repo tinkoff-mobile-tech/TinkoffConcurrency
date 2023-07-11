@@ -1,0 +1,695 @@
+{
+  "abstract" : [
+    {
+      "text" : "A bridge between Combine Publishers and Swift Concurrency",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/CombineBindings"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "TinkoffConcurrency"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Combine bindings for legacy systems"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "anchor" : "asyncValues",
+          "level" : 3,
+          "text" : "asyncValues",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "TinkoffConcurrency provides a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/values-v7nz",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "alternative which allows you to use the Swift ",
+              "type" : "text"
+            },
+            {
+              "code" : "async",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "await",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " syntax to receive the publisher’s elements.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It follows Apple’s ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/values-v7nz",
+              "isActive" : true,
+              "overridingTitle" : "Publisher.values",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "Publisher.values",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " contract, but is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "available on earlier OS versions.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example shows how to use the ",
+              "type" : "text"
+            },
+            {
+              "code" : "asyncValues",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property to receive elements asynchronously.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The example adapts a code snippet from the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/filter(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " operator’s documentation,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which filters a sequence to only emit even integers. This example replaces the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/subscribers\/sink",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "subscriber with a ",
+              "type" : "text"
+            },
+            {
+              "code" : "for",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "await",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-",
+              "type" : "text"
+            },
+            {
+              "code" : "in",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " loop that iterates over the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncPublisher",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "provided by the ",
+              "type" : "text"
+            },
+            {
+              "code" : "asyncValues",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "    let numbers: [Int] = [1, 2, 3, 4, 5]",
+            "    let filtered = numbers.publisher",
+            "        .filter { $0 % 2 == 0 }",
+            "",
+            "    for await number in filtered.asyncValues",
+            "    {",
+            "        print(\"\\(number)\", terminator: \" \")",
+            "    }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Async-Channel",
+          "level" : 3,
+          "text" : "Async Channel",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In addition to ",
+              "type" : "text"
+            },
+            {
+              "code" : "asyncValues",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which is Combine → Swift Concurrency bridge, Tinkoff Concurrency provides another",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "one that allows sending data from Swift Concurrency to Combine respecting Combine’s backpressure. We call it ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Basically, this contract is borrowed from Apple Async Algorithms ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-async-algorithms\/blob\/main\/Sources\/AsyncAlgorithms\/AsyncAlgorithms.docc\/Guides\/Channel.md",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "behavior. Consider the following example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "    let subject = PassthroughSubject<String, Error>()",
+            "",
+            "    Task {",
+            "        while let value = getValue() {",
+            "            subject.send(value)",
+            "        }",
+            "",
+            "        subject.send(completion: .finished)",
+            "    }",
+            "",
+            "    for await value in subject.asyncValues {",
+            "        await useValue(value)",
+            "    }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If ",
+              "type" : "text"
+            },
+            {
+              "code" : "getValue()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is executed fast enough, we can lose some values, because ",
+              "type" : "text"
+            },
+            {
+              "code" : "PassthroughSubject",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " would drop them until",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "subscription is ready to receive. Fortunately, in async context, we can use Combine’s backpressure mechanism to synchronize",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "reader and writer. In the next example, no values would be lost, because ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel\/send(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " will wait until",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "there’s at least one subscriber, and all subscribers are ready to receive a value.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "    let channel = TCAsyncChannel<String, Error>()",
+            "",
+            "    Task {",
+            "        while let value = getValue() {",
+            "            try await channel.send(value)",
+            "        }",
+            "",
+            "        try channel.send(completion: .finished)",
+            "    }",
+            "",
+            "    for await value in channel.asyncValues {",
+            "        await useValue(value)",
+            "    }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This way, ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " can be used as a synchronization primitive like Golang ",
+              "type" : "text"
+            },
+            {
+              "code" : "chan",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/apple\/swift-async-algorithms\/blob\/main\/Sources\/AsyncAlgorithms\/AsyncAlgorithms.docc\/Guides\/Channel.md",
+              "isActive" : true,
+              "overridingTitle" : "AsyncChannel",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "AsyncChannel",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Bear in mind, however, that there still could be race conditions. In example below, some initial values could be skipped by one of the readers,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "depending on when subscription is scheduled. But, when both subscriptions are estabilished, next value could be submitted only when previous value",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is consumed by both of the readers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "    let channel = TCAsyncChannel<String, Error>()",
+            "",
+            "    Task {",
+            "        while let value = getValue() {",
+            "            try await channel.send(value)",
+            "        }",
+            "",
+            "        try channel.send(completion: .finished)",
+            "    }",
+            "",
+            "    Task {",
+            "        for await value in channel.asyncValues {",
+            "            await doSomething(with: value)",
+            "        }",
+            "    }",
+            "",
+            "    Task {",
+            "        for await value in channel.asyncValues {",
+            "            await doSomethingElse(with: value)",
+            "        }",
+            "    }"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/tinkoffconcurrency\/combinebindings"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency": {
+  "abstract" : [
+    {
+      "text" : "TinkoffConcurrency is a set of tools that fill some gaps when integrating Swift Concurrency to your project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TinkoffConcurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncChannel": {
+  "abstract" : [
+    {
+      "text" : "A channel for sending values from Swift Concurrency task to Combine with backpressure",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncChannel"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncChannel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCAsyncChannel",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncChannel/send(_:)": {
+  "abstract" : [
+    {
+      "text" : "Send value respecting Combine backpressure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "send"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Output"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncChannel\/send(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "send(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/send(_:)"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/TCAsyncPublisher": {
+  "abstract" : [
+    {
+      "text" : "A publisher that exposes its elements as an asynchronous sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncPublisher"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/TCAsyncPublisher",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TCAsyncPublisher"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TCAsyncPublisher",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher"
+},
+"https://developer.apple.com/documentation/combine/publisher/filter(_:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/filter(_:)",
+  "title" : "filter(_:)",
+  "titleInlineContent" : [
+    {
+      "text" : "filter(_:)",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/filter(_:)"
+},
+"https://developer.apple.com/documentation/combine/publisher/values-v7nz": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/values-v7nz",
+  "title" : "Publisher.values",
+  "titleInlineContent" : [
+    {
+      "text" : "Publisher.values",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/combine\/publisher\/values-v7nz"
+},
+"https://developer.apple.com/documentation/combine/subscribers/sink": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/combine\/subscribers\/sink",
+  "title" : "Subscribers.Sink",
+  "titleInlineContent" : [
+    {
+      "text" : "Subscribers.Sink",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/combine\/subscribers\/sink"
+},
+"https://github.com/apple/swift-async-algorithms/blob/main/Sources/AsyncAlgorithms/AsyncAlgorithms.docc/Guides/Channel.md": {
+  "identifier" : "https:\/\/github.com\/apple\/swift-async-algorithms\/blob\/main\/Sources\/AsyncAlgorithms\/AsyncAlgorithms.docc\/Guides\/Channel.md",
+  "title" : "AsyncChannel",
+  "titleInlineContent" : [
+    {
+      "text" : "AsyncChannel",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/apple\/swift-async-algorithms\/blob\/main\/Sources\/AsyncAlgorithms\/AsyncAlgorithms.docc\/Guides\/Channel.md"
+}
+}
+}

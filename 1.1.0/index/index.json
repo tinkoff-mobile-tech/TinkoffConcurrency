@@ -1,0 +1,622 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Articles",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Functions",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/withcheckedthrowingcancellablecontinuation(function:_:)",
+                "title" : "func withCheckedThrowingCancellableContinuation<T>(function: String, ((Result<T, Error>) -> Void) -> TCCancellable?) async throws -> T",
+                "type" : "func"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/cancellablecontinuation",
+            "title" : "Continuations with task cancellation support",
+            "type" : "symbol"
+          },
+          {
+            "path" : "\/documentation\/tinkoffconcurrency\/combinebindings",
+            "title" : "Combine bindings for legacy systems",
+            "type" : "article"
+          },
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure\/init(cancellationclosure:)",
+                "title" : "init(cancellationClosure: () -> Void)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure\/iscancelled",
+                "title" : "var isCancelled: Bool",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure",
+            "title" : "TCCancellableClosure",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.property",
+                "title" : "var state: TCCancellablesStorage.State",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/add(_:)",
+                "title" : "func add(TCCancellable) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/deactivate()",
+                "title" : "func deactivate() -> Bool",
+                "type" : "method"
+              },
+              {
+                "title" : "Enumerations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/active",
+                    "title" : "case active",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/cancelled",
+                    "title" : "case cancelled",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/deactivated",
+                    "title" : "case deactivated",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum",
+                "title" : "TCCancellablesStorage.State",
+                "type" : "enum"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage",
+            "title" : "TCCancellablesStorage",
+            "type" : "class"
+          },
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellable\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tccancellable",
+            "title" : "TCCancellable",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/iterator\/next()",
+                    "title" : "func next() async -> TCAsyncPublisher<P>.Iterator.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/iterator\/element",
+                    "title" : "TCAsyncPublisher.Iterator.Element",
+                    "type" : "typealias"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/iterator",
+                "title" : "TCAsyncPublisher.Iterator",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/init(_:)",
+                "title" : "init(P)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/makeasynciterator()",
+                "title" : "func makeAsyncIterator() -> TCAsyncPublisher<P>.AsyncIterator",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/asynciterator",
+                "title" : "TCAsyncPublisher.AsyncIterator",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/element",
+                "title" : "TCAsyncPublisher.Element",
+                "type" : "typealias"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/characters",
+                    "title" : "var characters: AsyncCharacterSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/lines",
+                    "title" : "var lines: AsyncLineSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/unicodescalars",
+                    "title" : "var unicodeScalars: AsyncUnicodeScalarSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/compactmap(_:)-1vji7",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/compactmap(_:)-6chtp",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/contains(_:)",
+                    "title" : "func contains(Self.Element) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/contains(where:)",
+                    "title" : "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/drop(while:)",
+                    "title" : "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/filter(_:)",
+                    "title" : "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/first(where:)",
+                    "title" : "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/flatmap(_:)-5zrpf",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/flatmap(_:)-99wmb",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/map(_:)-1qqqw",
+                    "title" : "func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/map(_:)-29m1f",
+                    "title" : "func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/max()",
+                    "title" : "func max() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/max(by:)",
+                    "title" : "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/min()",
+                    "title" : "func min() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/min(by:)",
+                    "title" : "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/prefix(_:)",
+                    "title" : "func prefix(Int) -> AsyncPrefixSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/reduce(_:_:)",
+                    "title" : "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/reduce(into:_:)",
+                    "title" : "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/asyncsequence-implementations",
+                "title" : "AsyncSequence Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher",
+            "title" : "TCAsyncPublisher",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator\/next()",
+                    "title" : "func next() async throws -> TCAsyncThrowingPublisher<P>.Iterator.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator\/element",
+                    "title" : "TCAsyncThrowingPublisher.Iterator.Element",
+                    "type" : "typealias"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator",
+                "title" : "TCAsyncThrowingPublisher.Iterator",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/init(_:)",
+                "title" : "init(P)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/makeasynciterator()",
+                "title" : "func makeAsyncIterator() -> TCAsyncThrowingPublisher<P>.AsyncIterator",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/asynciterator",
+                "title" : "TCAsyncThrowingPublisher.AsyncIterator",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/element",
+                "title" : "TCAsyncThrowingPublisher.Element",
+                "type" : "typealias"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/characters",
+                    "title" : "var characters: AsyncCharacterSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/lines",
+                    "title" : "var lines: AsyncLineSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/unicodescalars",
+                    "title" : "var unicodeScalars: AsyncUnicodeScalarSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/compactmap(_:)-2eia7",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/compactmap(_:)-5x65s",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/contains(_:)",
+                    "title" : "func contains(Self.Element) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/contains(where:)",
+                    "title" : "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/drop(while:)",
+                    "title" : "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/filter(_:)",
+                    "title" : "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/first(where:)",
+                    "title" : "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/flatmap(_:)-2p7dt",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/flatmap(_:)-5lant",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/map(_:)-7vh1m",
+                    "title" : "func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/map(_:)-9jdmh",
+                    "title" : "func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/max()",
+                    "title" : "func max() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/max(by:)",
+                    "title" : "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/min()",
+                    "title" : "func min() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/min(by:)",
+                    "title" : "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/prefix(_:)",
+                    "title" : "func prefix(Int) -> AsyncPrefixSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/reduce(_:_:)",
+                    "title" : "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/reduce(into:_:)",
+                    "title" : "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/asyncsequence-implementations",
+                "title" : "AsyncSequence Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher",
+            "title" : "TCAsyncThrowingPublisher",
+            "type" : "struct"
+          },
+          {
+            "title" : "Functions",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/tinkoffconcurrency\/withcheckedthrowingcancellablecontinuation(function:_:)",
+            "title" : "func withCheckedThrowingCancellableContinuation<T>(function: String, ((Result<T, Error>) -> Void) -> TCCancellable?) async throws -> T",
+            "type" : "func"
+          }
+        ],
+        "path" : "\/documentation\/tinkoffconcurrency",
+        "title" : "TinkoffConcurrency",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}

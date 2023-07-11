@@ -1,0 +1,497 @@
+{
+  "abstract" : [
+    {
+      "text" : "Wrapping an async operation that can be cancelled into a throwing async method that can respect Task",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "cancellation.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/CancellableContinuation"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "TinkoffConcurrency"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "Continuations with task cancellation support"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With Swift Concurrency that came with Swift 5.5, we have an amazing tool that makes concurrent code",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "look just like a conventional one, when logic is being read from top to bottom, eliminating so-called",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "“callback hell”. As a bridge between callback-based world and async methods, one can use",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedcontinuation(function:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " \/",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedthrowingcontinuation(function:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to wrap an existing callback-based method. Say, we have some asynchronous operation like",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func someAsyncOperation(completion: @escaping (Result<String, Error>) -> Void)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Wrapping it to async method is easy:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func someAsyncOperation() async throws -> String {",
+            "    try await withCheckedThrowingContinuation { continuation in",
+            "        someAsyncOperation(completion: continuation.resume(with:))",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "but, we have a problem wrapping operations that can be cancelled. Given a method like",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func someAsyncCancellableOperation(completion: @escaping (Result<String, Error>) -> Void) -> CancellationToken"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With new ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/withCheckedThrowingCancellableContinuation(function:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " we can wrap it like so:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func someAsyncCancellableOperation() async throws -> String {",
+            "    try await withCheckedThrowingCancellableContinuation { completion in",
+            "        let token = someAsyncCancellableOperation(completion: completion)",
+            "",
+            "        return TCCancellableClosure {",
+            "            \/\/ perform whatever cancel actions needed",
+            "            cancelOperation(token)",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "or, even simpler, if cancellable token has",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func cancel()"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "wrapping becomes trivial:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "extension CancellationToken: TCCancellable {}",
+            "",
+            "func someAsyncCancellableOperation() async throws -> String {",
+            "    try await withCheckedThrowingCancellableContinuation { completion in",
+            "        someAsyncCancellableOperation(completion: completion)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/withCheckedThrowingCancellableContinuation(function:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ensures that continuation will be resumed only once, either",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "by resolving a completion closure, or when task is cancelled. In later case, it throws",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/cancellationerror",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". That’s why only throwing variant",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is available, in contrast to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedcontinuation(function:_:)",
+              "isActive" : true,
+              "overridingTitle" : "withCheckedContinuation",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "withCheckedContinuation",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            },
+            {
+              "text" : " \/",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedthrowingcontinuation(function:_:)",
+              "isActive" : true,
+              "overridingTitle" : "withCheckedThrowingContinuation",
+              "overridingTitleInlineContent" : [
+                {
+                  "text" : "withCheckedThrowingContinuation",
+                  "type" : "text"
+                }
+              ],
+              "type" : "reference"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/withCheckedThrowingCancellableContinuation(function:_:)"
+      ],
+      "title" : "Functions"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/tinkoffconcurrency\/cancellablecontinuation"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency": {
+  "abstract" : [
+    {
+      "text" : "TinkoffConcurrency is a set of tools that fill some gaps when integrating Swift Concurrency to your project.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TinkoffConcurrency",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency"
+},
+"doc://TinkoffConcurrency/documentation/TinkoffConcurrency/withCheckedThrowingCancellableContinuation(function:_:)": {
+  "abstract" : [
+    {
+      "text" : "Suspends the current task, then calls the given closure with a completion.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withCheckedThrowingCancellableContinuation"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "function"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", (("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6ResultO",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18TinkoffConcurrency13TCCancellableP",
+      "text" : "TCCancellable"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/TinkoffConcurrency\/documentation\/TinkoffConcurrency\/withCheckedThrowingCancellableContinuation(function:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withCheckedThrowingCancellableContinuation(function:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/tinkoffconcurrency\/withcheckedthrowingcancellablecontinuation(function:_:)"
+},
+"https://developer.apple.com/documentation/swift/cancellationerror": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/cancellationerror",
+  "title" : "CancellationError",
+  "titleInlineContent" : [
+    {
+      "text" : "CancellationError",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/cancellationerror"
+},
+"https://developer.apple.com/documentation/swift/withcheckedcontinuation(function:_:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedcontinuation(function:_:)",
+  "title" : "withCheckedContinuation",
+  "titleInlineContent" : [
+    {
+      "text" : "withCheckedContinuation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedcontinuation(function:_:)"
+},
+"https://developer.apple.com/documentation/swift/withcheckedthrowingcontinuation(function:_:)": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedthrowingcontinuation(function:_:)",
+  "title" : "withCheckedThrowingContinuation",
+  "titleInlineContent" : [
+    {
+      "text" : "withCheckedThrowingContinuation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/swift\/withcheckedthrowingcontinuation(function:_:)"
+}
+}
+}

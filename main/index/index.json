@@ -1,0 +1,1560 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Articles",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Functions",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/withcheckedthrowingcancellablecontinuation(function:_:)",
+                "title" : "func withCheckedThrowingCancellableContinuation<T>(function: String, ((Result<T, Error>) -> Void) -> TCCancellable?) async throws -> T",
+                "type" : "func"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/cancellablecontinuation",
+            "title" : "Continuations with task cancellation support",
+            "type" : "symbol"
+          },
+          {
+            "path" : "\/documentation\/tinkoffconcurrency\/combinebindings",
+            "title" : "Combine bindings for legacy systems",
+            "type" : "article"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Task Factory",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(operation:)-3kj1c",
+                    "title" : "func detached<T>(operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(operation:)-3lww2",
+                    "title" : "func detached<T>(operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(priority:operation:)-7jwod",
+                    "title" : "func detached<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(priority:operation:)-96bex",
+                    "title" : "func detached<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(operation:)-6ar8k",
+                    "title" : "func task<T>(operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(operation:)-6bwps",
+                    "title" : "func task<T>(operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(priority:operation:)-4opq8",
+                    "title" : "func task<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(priority:operation:)-9y2yp",
+                    "title" : "func task<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory",
+                "title" : "ITCTaskFactory",
+                "type" : "protocol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/init()",
+                    "title" : "init()",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(priority:operation:)-4imsh",
+                    "title" : "func detached<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(priority:operation:)-9qve3",
+                    "title" : "func detached<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(priority:operation:)-9qpcf",
+                    "title" : "func task<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(priority:operation:)-omnq",
+                    "title" : "func task<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(operation:)-5gk99",
+                        "title" : "func detached<T>(operation: () async throws -> T) -> Task<T, Error>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(operation:)-8vi6v",
+                        "title" : "func detached<T>(operation: () async -> T) -> Task<T, Never>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(operation:)-1z9an",
+                        "title" : "func task<T>(operation: () async throws -> T) -> Task<T, Error>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(operation:)-3wbe2",
+                        "title" : "func task<T>(operation: () async -> T) -> Task<T, Never>",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/itctaskfactory-implementations",
+                    "title" : "ITCTaskFactory Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory",
+                "title" : "TCTaskFactory",
+                "type" : "struct"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/taskmanagement",
+            "title" : "Task Management",
+            "type" : "symbol"
+          },
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/receive(subscriber:)",
+                "title" : "func receive<S>(subscriber: S)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/send(_:)",
+                "title" : "func send(Output) async throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/send(completion:)",
+                "title" : "func send(completion: Subscribers.Completion<Failure>) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/asyncvalues-2vj17",
+                    "title" : "var asyncValues: TCAsyncThrowingPublisher<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/asyncvalues-46icd",
+                    "title" : "var asyncValues: TCAsyncPublisher<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/values-2ie26",
+                    "title" : "var values: AsyncThrowingPublisher<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/values-9t5b8",
+                    "title" : "var values: AsyncPublisher<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/append(_:)",
+                    "title" : "func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/assertnofailure(_:file:line:)",
+                    "title" : "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/assign(to:)",
+                    "title" : "func assign(to: inout Published<Self.Output>.Publisher)",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/assign(to:on:)",
+                    "title" : "func assign<Root>(to: ReferenceWritableKeyPath<Root, Self.Output>, on: Root) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/breakpoint(receivesubscription:receiveoutput:receivecompletion:)",
+                    "title" : "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/breakpointonerror()",
+                    "title" : "func breakpointOnError() -> Publishers.Breakpoint<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/buffer(size:prefetch:whenfull:)",
+                    "title" : "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/catch(_:)",
+                    "title" : "func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/collect()",
+                    "title" : "func collect() -> Publishers.Collect<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/collect(_:)",
+                    "title" : "func collect(Int) -> Publishers.CollectByCount<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/collect(_:options:)",
+                    "title" : "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/combinelatest(_:)",
+                    "title" : "func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/combinelatest(_:_:)-2coo1",
+                    "title" : "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/combinelatest(_:_:)-4kn3p",
+                    "title" : "func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/combinelatest(_:_:_:)-7deg9",
+                    "title" : "func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/combinelatest(_:_:_:)-93wid",
+                    "title" : "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/combinelatest(_:_:_:_:)",
+                    "title" : "func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/compactmap(_:)",
+                    "title" : "func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/contains(_:)",
+                    "title" : "func contains(Self.Output) -> Publishers.Contains<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/contains(where:)",
+                    "title" : "func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/count()",
+                    "title" : "func count() -> Publishers.Count<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/debounce(for:scheduler:options:)",
+                    "title" : "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/decode(type:decoder:)",
+                    "title" : "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/delay(for:tolerance:scheduler:options:)",
+                    "title" : "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/drop(untiloutputfrom:)",
+                    "title" : "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/drop(while:)",
+                    "title" : "func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> Publishers.Drop<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/encode(encoder:)",
+                    "title" : "func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/erasetoanypublisher()",
+                    "title" : "func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/filter(_:)",
+                    "title" : "func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/first()",
+                    "title" : "func first() -> Publishers.First<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/first(where:)",
+                    "title" : "func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/flatmap(maxpublishers:_:)-1wrnp",
+                    "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<Self, P.Failure>>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/flatmap(maxpublishers:_:)-2mhmn",
+                    "title" : "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/flatmap(maxpublishers:_:)-3lzy4",
+                    "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Self.Failure>, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/flatmap(maxpublishers:_:)-3yt6l",
+                    "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/handleevents(receivesubscription:receiveoutput:receivecompletion:receivecancel:receiverequest:)",
+                    "title" : "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/ignoreoutput()",
+                    "title" : "func ignoreOutput() -> Publishers.IgnoreOutput<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/last()",
+                    "title" : "func last() -> Publishers.Last<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/last(where:)",
+                    "title" : "func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/makeconnectable()",
+                    "title" : "func makeConnectable() -> Publishers.MakeConnectable<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/map(_:)-18yl1",
+                    "title" : "func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/map(_:)-6gcki",
+                    "title" : "func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/map(_:_:)",
+                    "title" : "func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/map(_:_:_:)",
+                    "title" : "func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/maperror(_:)",
+                    "title" : "func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/max()",
+                    "title" : "func max() -> Publishers.Comparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/max(by:)",
+                    "title" : "func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/measureinterval(using:options:)",
+                    "title" : "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:)",
+                    "title" : "func merge(with: Self) -> Publishers.MergeMany<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:_:)",
+                    "title" : "func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:_:_:)",
+                    "title" : "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:_:_:_:)",
+                    "title" : "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:_:_:_:_:)",
+                    "title" : "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:_:_:_:_:_:)",
+                    "title" : "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/merge(with:_:_:_:_:_:_:)",
+                    "title" : "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/min()",
+                    "title" : "func min() -> Publishers.Comparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/min(by:)",
+                    "title" : "func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/multicast(_:)",
+                    "title" : "func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/multicast(subject:)",
+                    "title" : "func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/output(at:)",
+                    "title" : "func output(at: Int) -> Publishers.Output<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/output(in:)",
+                    "title" : "func output<R>(in: R) -> Publishers.Output<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/prefix(_:)",
+                    "title" : "func prefix(Int) -> Publishers.Output<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/prefix(untiloutputfrom:)",
+                    "title" : "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/prepend(_:)",
+                    "title" : "func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/print(_:to:)",
+                    "title" : "func print(String, to: TextOutputStream?) -> Publishers.Print<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/receive(on:options:)",
+                    "title" : "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/reduce(_:_:)",
+                    "title" : "func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/removeduplicates()",
+                    "title" : "func removeDuplicates() -> Publishers.RemoveDuplicates<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/removeduplicates(by:)",
+                    "title" : "func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/replaceempty(with:)",
+                    "title" : "func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/replaceerror(with:)",
+                    "title" : "func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/replacenil(with:)",
+                    "title" : "func replaceNil<T>(with: T) -> Publishers.Map<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/retry(_:)",
+                    "title" : "func retry(Int) -> Publishers.Retry<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/scan(_:_:)",
+                    "title" : "func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/setfailuretype(to:)",
+                    "title" : "func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Self, E>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/share()",
+                    "title" : "func share() -> Publishers.Share<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/sink(receivecompletion:receivevalue:)",
+                    "title" : "func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/sink(receivevalue:)",
+                    "title" : "func sink(receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/subscribe(_:)-4dwqr",
+                    "title" : "func subscribe<S>(S) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/subscribe(_:)-8619u",
+                    "title" : "func subscribe<S>(S)",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/subscribe(on:options:)",
+                    "title" : "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/switchtolatest()",
+                    "title" : "func switchToLatest() -> Publishers.SwitchToLatest<Self.Output, Publishers.SetFailureType<Self, Self.Output.Failure>>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/throttle(for:scheduler:latest:)",
+                    "title" : "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/timeout(_:scheduler:options:customerror:)",
+                    "title" : "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryallsatisfy(_:)",
+                    "title" : "func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trycatch(_:)",
+                    "title" : "func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trycompactmap(_:)",
+                    "title" : "func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trycontains(where:)",
+                    "title" : "func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trydrop(while:)",
+                    "title" : "func tryDrop(while: (Self.Output) throws -> Bool) -> Publishers.TryDropWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryfilter(_:)",
+                    "title" : "func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryfirst(where:)",
+                    "title" : "func tryFirst(where: (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trylast(where:)",
+                    "title" : "func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trymap(_:)",
+                    "title" : "func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trymax(by:)",
+                    "title" : "func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/trymin(by:)",
+                    "title" : "func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryprefix(while:)",
+                    "title" : "func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryreduce(_:_:)",
+                    "title" : "func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryremoveduplicates(by:)",
+                    "title" : "func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/tryscan(_:_:)",
+                    "title" : "func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/zip(_:)",
+                    "title" : "func zip<P>(P) -> Publishers.Zip<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/zip(_:_:)-46w2o",
+                    "title" : "func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/zip(_:_:)-4plhe",
+                    "title" : "func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/zip(_:_:_:)-2q9tg",
+                    "title" : "func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/zip(_:_:_:)-52k73",
+                    "title" : "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/zip(_:_:_:_:)",
+                    "title" : "func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel\/publisher-implementations",
+                "title" : "Publisher Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannel",
+            "title" : "TCAsyncChannel",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure\/init(cancellationclosure:)",
+                "title" : "init(cancellationClosure: () -> Void)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure\/iscancelled",
+                "title" : "var isCancelled: Bool",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tccancellableclosure",
+            "title" : "TCCancellableClosure",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.property",
+                "title" : "var state: TCCancellablesStorage.State",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/add(_:)",
+                "title" : "func add(TCCancellable) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/deactivate()",
+                "title" : "func deactivate() -> Bool",
+                "type" : "method"
+              },
+              {
+                "title" : "Enumerations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/active",
+                    "title" : "case active",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/cancelled",
+                    "title" : "case cancelled",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/deactivated",
+                    "title" : "case deactivated",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage\/state-swift.enum",
+                "title" : "TCCancellablesStorage.State",
+                "type" : "enum"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tccancellablesstorage",
+            "title" : "TCCancellablesStorage",
+            "type" : "class"
+          },
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(operation:)-3kj1c",
+                "title" : "func detached<T>(operation: () async throws -> T) -> Task<T, Error>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(operation:)-3lww2",
+                "title" : "func detached<T>(operation: () async -> T) -> Task<T, Never>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(priority:operation:)-7jwod",
+                "title" : "func detached<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/detached(priority:operation:)-96bex",
+                "title" : "func detached<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(operation:)-6ar8k",
+                "title" : "func task<T>(operation: () async -> T) -> Task<T, Never>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(operation:)-6bwps",
+                "title" : "func task<T>(operation: () async throws -> T) -> Task<T, Error>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(priority:operation:)-4opq8",
+                "title" : "func task<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory\/task(priority:operation:)-9y2yp",
+                "title" : "func task<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/itctaskfactory",
+            "title" : "ITCTaskFactory",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tccancellable\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tccancellable",
+            "title" : "TCCancellable",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/iterator\/next()",
+                    "title" : "func next() async -> TCAsyncPublisher<P>.Iterator.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/iterator\/element",
+                    "title" : "TCAsyncPublisher.Iterator.Element",
+                    "type" : "typealias"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/iterator",
+                "title" : "TCAsyncPublisher.Iterator",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/init(_:)",
+                "title" : "init(P)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/makeasynciterator()",
+                "title" : "func makeAsyncIterator() -> TCAsyncPublisher<P>.AsyncIterator",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/asynciterator",
+                "title" : "TCAsyncPublisher.AsyncIterator",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/element",
+                "title" : "TCAsyncPublisher.Element",
+                "type" : "typealias"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/characters",
+                    "title" : "var characters: AsyncCharacterSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/lines",
+                    "title" : "var lines: AsyncLineSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/unicodescalars",
+                    "title" : "var unicodeScalars: AsyncUnicodeScalarSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/compactmap(_:)-1vji7",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/compactmap(_:)-6chtp",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/contains(_:)",
+                    "title" : "func contains(Self.Element) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/contains(where:)",
+                    "title" : "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/drop(while:)",
+                    "title" : "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/filter(_:)",
+                    "title" : "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/first(where:)",
+                    "title" : "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/flatmap(_:)-5zrpf",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/flatmap(_:)-99wmb",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/map(_:)-1qqqw",
+                    "title" : "func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/map(_:)-29m1f",
+                    "title" : "func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/max()",
+                    "title" : "func max() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/max(by:)",
+                    "title" : "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/min()",
+                    "title" : "func min() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/min(by:)",
+                    "title" : "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/prefix(_:)",
+                    "title" : "func prefix(Int) -> AsyncPrefixSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/reduce(_:_:)",
+                    "title" : "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/reduce(into:_:)",
+                    "title" : "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher\/asyncsequence-implementations",
+                "title" : "AsyncSequence Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tcasyncpublisher",
+            "title" : "TCAsyncPublisher",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator\/next()",
+                    "title" : "func next() async throws -> TCAsyncThrowingPublisher<P>.Iterator.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator\/element",
+                    "title" : "TCAsyncThrowingPublisher.Iterator.Element",
+                    "type" : "typealias"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/iterator",
+                "title" : "TCAsyncThrowingPublisher.Iterator",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/init(_:)",
+                "title" : "init(P)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/makeasynciterator()",
+                "title" : "func makeAsyncIterator() -> TCAsyncThrowingPublisher<P>.AsyncIterator",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/asynciterator",
+                "title" : "TCAsyncThrowingPublisher.AsyncIterator",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/element",
+                "title" : "TCAsyncThrowingPublisher.Element",
+                "type" : "typealias"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/characters",
+                    "title" : "var characters: AsyncCharacterSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/lines",
+                    "title" : "var lines: AsyncLineSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/unicodescalars",
+                    "title" : "var unicodeScalars: AsyncUnicodeScalarSequence<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/compactmap(_:)-2eia7",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/compactmap(_:)-5x65s",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/contains(_:)",
+                    "title" : "func contains(Self.Element) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/contains(where:)",
+                    "title" : "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/drop(while:)",
+                    "title" : "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/filter(_:)",
+                    "title" : "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/first(where:)",
+                    "title" : "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/flatmap(_:)-2p7dt",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/flatmap(_:)-5lant",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/map(_:)-7vh1m",
+                    "title" : "func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/map(_:)-9jdmh",
+                    "title" : "func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/max()",
+                    "title" : "func max() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/max(by:)",
+                    "title" : "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/min()",
+                    "title" : "func min() async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/min(by:)",
+                    "title" : "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/prefix(_:)",
+                    "title" : "func prefix(Int) -> AsyncPrefixSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/reduce(_:_:)",
+                    "title" : "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/reduce(into:_:)",
+                    "title" : "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher\/asyncsequence-implementations",
+                "title" : "AsyncSequence Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tcasyncthrowingpublisher",
+            "title" : "TCAsyncThrowingPublisher",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(priority:operation:)-4imsh",
+                "title" : "func detached<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(priority:operation:)-9qve3",
+                "title" : "func detached<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(priority:operation:)-9qpcf",
+                "title" : "func task<T>(priority: TaskPriority?, operation: () async throws -> T) -> Task<T, Error>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(priority:operation:)-omnq",
+                "title" : "func task<T>(priority: TaskPriority?, operation: () async -> T) -> Task<T, Never>",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(operation:)-5gk99",
+                    "title" : "func detached<T>(operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/detached(operation:)-8vi6v",
+                    "title" : "func detached<T>(operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(operation:)-1z9an",
+                    "title" : "func task<T>(operation: () async throws -> T) -> Task<T, Error>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/task(operation:)-3wbe2",
+                    "title" : "func task<T>(operation: () async -> T) -> Task<T, Never>",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory\/itctaskfactory-implementations",
+                "title" : "ITCTaskFactory Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tctaskfactory",
+            "title" : "TCTaskFactory",
+            "type" : "struct"
+          },
+          {
+            "title" : "Functions",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/tinkoffconcurrency\/withcheckedthrowingcancellablecontinuation(function:_:)",
+            "title" : "func withCheckedThrowingCancellableContinuation<T>(function: String, ((Result<T, Error>) -> Void) -> TCCancellable?) async throws -> T",
+            "type" : "func"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/concurrentaccess",
+                "title" : "case concurrentAccess",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/outputtofinished",
+                "title" : "case outputToFinished",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/tinkoffconcurrency\/tcasyncchannelerrors",
+            "title" : "TCAsyncChannelErrors",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/tinkoffconcurrency",
+        "title" : "TinkoffConcurrency",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}
