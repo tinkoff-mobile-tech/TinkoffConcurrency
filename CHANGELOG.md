@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+**Add**
+
+- **Podspec**
+
+  - `static_framework` set to true
+
 ## [2.0.0] - 2023-05-29Z
 
 **Add**
